@@ -5,7 +5,7 @@
 	<meta name="layout" content="main">
 	<g:set var="entityName" value="${message(code: 'membro.label', default: 'Membro')}" />
 	<title>
-		<g:message code="default.create.label" args="[entityName]" />
+		<g:message code="default.new.label" args="[entityName]" />
 	</title>
 	</head>
 <body>
@@ -23,7 +23,7 @@
 	</div>
 	<div id="create-membro" class="content scaffold-create" role="main">
 		<h1>
-			<g:message code="default.create.label" args="[entityName]" />
+			<g:message code="default.new.label" args="[entityName]" />
 		</h1>
 		<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
