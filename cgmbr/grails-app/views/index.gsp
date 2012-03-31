@@ -74,12 +74,33 @@ p {
 </style>
 </head>
 <body>
-	<a href="#page-body" class="skip">
-		<g:message code="default.link.skip.label" default="Skip to content&hellip;" />
-	</a>
-	<h1 align="center">Bem-vindo ao CGM-BR - Cadastro Geral de Membros da Igreja Batista Renovada</h1>
-	<div id="page-body" role="main">
-		<p>Este sitema tem como objetivo realizar o cadastro de menbros da igreja Batista Renovada Sede Mundial</p>
-	</div>
+	<shiro:isLoggedIn>
+		<a href="#page-body" class="skip">
+			<g:message code="default.link.skip.label" default="Skip to content&hellip;" />
+		</a>
+		<h1 align="center">Bem-vindo ao CGM-IBR - Cadastro Geral de Membros da Igreja Batista Renovada</h1>
+
+		<div id="page-body" role="main">
+			<p>Este sistema tem como objetivo realizar o cadastro de membros da Igreja Batista Renovada Sede Mundial</p>
+		</div>
+
+		<div>
+			<!-- listagem dos controladores!!! -->
+			<table>
+				<tbody>
+					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
+						<tr>
+							<td>
+								<g:link controller="${c.logicalPropertyName}">
+									${c.name}
+								</g:link>
+							</td>
+						</tr>
+					</g:each>
+				</tbody>
+			</table>
+		</div>
+
+	</shiro:isLoggedIn>
 </body>
 </html>
