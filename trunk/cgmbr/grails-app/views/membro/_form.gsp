@@ -1,18 +1,19 @@
 <%@ page import="com.membro.Membro"%>
 
-<script type="text/javascript">
+<%--<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>--%>
+<%--<script type="text/javascript" src="http://jquery-joshbush.googlecode.com/files/jquery.maskedinput-1.2.1.pack.js"></script>--%>
+<%--<script type="text/javascript">--%>
+<%--	$(function() {--%>
+<%--		$("#cpf").mask("999.999.999-99");--%>
+<%----%>
+<%--		// Contents of textboxes will be selected when receiving focus.--%>
+<%--		$("input[type=text]").focus(function() {--%>
+<%--			$(this).select();--%>
+<%--		});--%>
+<%--	});--%>
+<%--</script>--%>
 
 
-jQuery(document).ready(function(){
-   //$("#date").mask("99/99/9999");
-   //$("#phone").mask("(999) 999-9999");
-   //$("#tin").mask("99-9999999");
-   
-   jQuery('#cpf').mask('999.999.999-99');
-   
-});
-
-</script>
 
 <g:if test="${membroInstance.id}">
 	<div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'status', 'error')} required">
@@ -41,7 +42,7 @@ jQuery(document).ready(function(){
 		</label>
 		<g:textField name="nomePai" value="${membroInstance?.nomePai}" />
 	</div>
-	
+
 	<div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'nomeMae', 'error')} ">
 		<label for="nomeMae">
 			<g:message code="membro.nomeMae.label" default="Nome Mae" />
@@ -57,9 +58,9 @@ jQuery(document).ready(function(){
 		<g:message code="membro.dataDeNascimento.label" default="Data De Nascimento" />
 		<span class="required-indicator">*</span>
 	</label>
-	
-<%--<script>--%>
-<%--	$(function() {--%>
+
+	<%--<script>--%>
+	<%--	$(function() {--%>
 <%--		var date = new Date();--%>
 <%--		var yearAge = date.getFullYear()-100;--%>
 <%--		var year = date.getFullYear();--%>
@@ -70,10 +71,10 @@ jQuery(document).ready(function(){
 <%--			changeYear: true--%>
 <%--		});--%>
 <%--	});--%>
-<%--</script>--%>
-	
-<%--	<input id="datepicker" type="date" value="${membroInstance?.dataDeNascimento}">--%>
-	
+	<%--</script>--%>
+
+	<%--	<input id="datepicker" type="date" value="${membroInstance?.dataDeNascimento}">--%>
+
 	<g:datePicker name="dataDeNascimento" precision="day" value="${membroInstance?.dataDeNascimento}" />
 </div>
 
@@ -126,7 +127,7 @@ jQuery(document).ready(function(){
 </div>
 
 <fieldset class="group">
-	<legend>Endere&ccedil;o do menbro.</legend>
+	<legend>Endere&ccedil;o do Membro.</legend>
 	<g:render template="/endereco/formEnderecoMembro"></g:render>
 </fieldset>
 
