@@ -13,8 +13,6 @@
 <%--	});--%>
 <%--</script>--%>
 
-
-
 <g:if test="${membroInstance.id}">
 	<div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'status', 'error')} required">
 		<label for="status">
