@@ -172,3 +172,16 @@
 	<g:textField name="cargo" required="" value="${membroInstance?.cargo}" />
 </div>
 
+
+<div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'cargo', 'error')} required">
+	<label for="cargo">
+		<g:message code="membro.foto.label" default="Foto" />
+		<span class="required-indicator">*</span>
+	</label>
+      <input type="file" id="foto" name="foto"/>
+</div>
+
+
+
+
+

@@ -37,6 +37,21 @@ class MembroController {
 		
 		membroInstance.endereco = enderecoService.saveEndereco(params)
 		
+//		//tratar arquivo transferido por upload
+//		def uploadedFile = request.getFile('payload')
+//		if(!uploadedFile.empty){
+//		  println "Class: ${uploadedFile.class}"
+//		  println "Name: ${uploadedFile.name}"
+//		  println "OriginalFileName: ${uploadedFile.originalFilename}"
+//		  println "Size: ${uploadedFile.size}"
+//		  println "ContentType: ${uploadedFile.contentType}"
+//		}
+//	
+//		if(!entryInstance.hasErrors() && entryInstance.save()) {
+//			flash.message = "Entry ${entryInstance.id} created"
+//			redirect(action:show,id:entryInstance.id)
+//		}
+		
         if (!membroInstance.save(flush: true)) {
             render(view: "create", model: [membroInstance: membroInstance])
             return
