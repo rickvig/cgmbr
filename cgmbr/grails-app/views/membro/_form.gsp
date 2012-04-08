@@ -127,6 +127,7 @@
 <fieldset class="group">
 	<legend>Endere&ccedil;o do Membro.</legend>
 	<g:render template="/endereco/formEnderecoMembro"></g:render>
+	<input type="hidden" name="membroEndereco" value="${membroInstance?.endereco?.id}" />
 </fieldset>
 
 
@@ -173,12 +174,12 @@
 </div>
 
 
-<div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'cargo', 'error')} required">
-	<label for="cargo">
+<div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'foto', 'error')} required">
+	<label for="foto">
 		<g:message code="membro.foto.label" default="Foto" />
 		<span class="required-indicator">*</span>
 	</label>
-      <input type="file" id="foto" name="foto"/>
+	<input type="file" id="foto" name="foto"/>
 </div>
 
 
