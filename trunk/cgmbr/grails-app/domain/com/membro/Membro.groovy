@@ -34,7 +34,7 @@ class Membro {
 	
 	Endereco endereco
 	
-	//byte[] foto
+	byte[] foto
 	
 	static constraints = {
 		status(blank:false, inList: [ATIVO, INATIVO])
@@ -53,9 +53,8 @@ class Membro {
 		estadoCivil(blank:false, inList: [SOLTEIRO, CASADO, SEPARADO, DIVORCIADO, VIUVO, OUTROS])
 		dataDeBatismo(nullable:true)
 		congregacao(blank:true)
-		//dataDeEmissao(min:new Date(), nullable: false)
 		cargo(blank:false)
-		//foto(unique:true, blank:true)
+		foto maxSize: 1024 * 1024 * 2
 	}
 	
 	public String toString(){

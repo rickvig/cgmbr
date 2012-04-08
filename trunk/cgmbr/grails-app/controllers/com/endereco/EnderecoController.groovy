@@ -1,6 +1,6 @@
 package com.endereco
 
-import com.endereco.Endereco;
+import org.springframework.dao.DataIntegrityViolationException
 
 class EnderecoController {
 

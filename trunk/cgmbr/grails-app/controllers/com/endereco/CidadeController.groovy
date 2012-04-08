@@ -2,8 +2,7 @@ package com.endereco
 
 class CidadeController {
 
-	def scaffold = CidadeController
-
+	def scaffold = Cidade
 
 	def getCidadePorEstado = {
 		println params.estadoId.class
@@ -16,7 +15,5 @@ class CidadeController {
 		cidadesList.each{
 			render "<options>${it}</options>"
 		}
-		
-//		render(tamplate:"formEnderecoMenbro", model:[cidadesList: cidadesList])
 	}
 }

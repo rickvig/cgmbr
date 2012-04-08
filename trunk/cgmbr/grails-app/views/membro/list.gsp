@@ -26,17 +26,18 @@
 					
 						<g:sortableColumn property="nome" title="${message(code: 'membro.nome.label', default: 'Nome')}" />
 					
-						<g:sortableColumn property="status" title="${message(code: 'membro.status.label', default: 'Status')}" />
-					
-						<g:sortableColumn property="dataDeNascimento" title="${message(code: 'membro.dataDeNascimento.label', default: 'Data De Nascimento')}" />
-					
-						<g:sortableColumn property="email" title="${message(code: 'membro.email.label', default: 'Email')}" />
-					
-						<g:sortableColumn property="RG" title="${message(code: 'membro.CPF.label', default: 'CPF')}" />
+						<g:sortableColumn property="Cargo" title="${message(code: 'membro.cargo.label', default: 'Cargo')}" />
 						
 						<g:sortableColumn property="congregacao" title="${message(code: 'membro.congregacao.label', default: 'Congregação')}" />
 						
-						<g:sortableColumn property="Cargo" title="${message(code: 'membro.cargo.label', default: 'Cargo')}" />
+						<g:sortableColumn property="dataDeNascimento" title="${message(code: 'membro.dataDeNascimento.label', default: 'Data De Nascimento')}" />
+					
+						<g:sortableColumn property="RG" title="${message(code: 'membro.CPF.label', default: 'CPF')}" />
+						
+						<g:sortableColumn property="email" title="${message(code: 'membro.email.label', default: 'Email')}" />
+						
+						<g:sortableColumn property="status" title="${message(code: 'membro.status.label', default: 'Status')}" />
+						
 					
 					</tr>
 				</thead>
@@ -48,17 +49,19 @@
 					
 						<td><g:link action="show" id="${membroInstance.id}">${fieldValue(bean: membroInstance, field: "nome")}</g:link></td>
 					
-						<td>${fieldValue(bean: membroInstance, field: "status")}</td>
-					
-						<td><g:formatDate format="dd/MM/yyyy" date="${membroInstance.dataDeNascimento}" /></td>
-						
-						<td>${fieldValue(bean: membroInstance, field: "email")}</td>
-					
-						<td>${fieldValue(bean: membroInstance, field: "CPF")}</td>
+						<td>${fieldValue(bean: membroInstance, field: "cargo")}</td>
 						
 						<td>${fieldValue(bean: membroInstance, field: "congregacao")}</td>
 						
-						<td>${fieldValue(bean: membroInstance, field: "cargo")}</td>
+						<td><g:formatDate format="dd/MM/yyyy" date="${membroInstance.dataDeNascimento}" /></td>
+						
+						<td>${fieldValue(bean: membroInstance, field: "CPF")}</td>
+						
+						<td>${fieldValue(bean: membroInstance, field: "email")}</td>
+					
+						<td>${fieldValue(bean: membroInstance, field: "status")}</td>
+						
+						
 						
 					</tr>
 				</g:each>

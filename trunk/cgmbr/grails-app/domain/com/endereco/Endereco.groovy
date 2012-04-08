@@ -1,5 +1,7 @@
 package com.endereco
 
+import com.membro.Membro;
+
 class Endereco {
 	
 	String cep
@@ -10,6 +12,8 @@ class Endereco {
 	Cidade cidade
 	Estado estado
 	Pais pais
+	
+	static belongsTo = [membro: Membro]
 	
 	static constraints = {
 		pais(blank:true)

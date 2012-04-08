@@ -58,7 +58,7 @@
 	</label>
 	<g:select id="cidade" 
 			name="cidade.id" 
-			from="${cidadesList}" 
+			from="${com.endereco.Cidade.list()}" 
 			optionKey="id" 
 			required=""
 			value="${membroInstance?.endereco?.cidade?.id}" 
