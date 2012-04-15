@@ -25,6 +25,12 @@
 					<g:message code="default.new.label" args="[entityName]" />
 				</g:link>
 			</li>
+			<li>
+				<g:link class="create" action="emiteCartao" id="${membroInstance.id}">
+					<g:message code="default.emitiCartao.label" args="[entityName]" 
+						default="Emitir Cart&atilde;o de Membro"  />
+				</g:link>
+			</li>
 		</ul>
 	</div>
 	<div id="show-membro" class="content scaffold-show" role="main">

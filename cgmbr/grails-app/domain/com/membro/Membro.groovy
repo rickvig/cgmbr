@@ -23,6 +23,7 @@ class Membro {
 	String estadoCivil
 	Date dataDeBatismo
 	Date dataDeEmissao
+	Date dataDeValidadeDoCartao
 	String RG
 	String CPF
 	String telefoneResidencial
@@ -54,7 +55,7 @@ class Membro {
 		dataDeBatismo(nullable:true)
 		congregacao(blank:true)
 		cargo(blank:false)
-		foto maxSize: 1024 * 1024 * 2
+		foto maxSize: 1024 * 1024 * 1
 	}
 	
 	public String toString(){
