@@ -10,6 +10,7 @@ class MembroController {
 
 	def enderecoService
 	def fotoService
+	def membroService
 
 	static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -27,30 +28,13 @@ class MembroController {
 	}
 
 	def save() {
-
 		params.each{ println "- params: "+it }
-
 		def membroInstance = new Membro(params)
-		//def fotoInstance = new Foto(params)
-//
-//		def uploadedFile = request.getFile('foto')
-//		if(!uploadedFile.empty){
-//			println "Class: ${uploadedFile.class}"
-//			println "Name: ${uploadedFile.name}"
-//			println "OriginalFileName: ${uploadedFile.originalFilename}"
-//			println "Size: ${uploadedFile.size}"
-//			println "ContentType: ${uploadedFile.contentType}"
-//			println "Bytes: ${uploadedFile.bytes}"
-//			println "Bytes Class: ${uploadedFile.bytes.class}"
-//			
-//		}
-//		membroInstance.foto = uploadedFile.getBytes()
-//		
-//		println "membroInstance.foto: "+membroInstance.foto
-
 
 		membroInstance.status = Membro.ATIVO
 		membroInstance.dataDeEmissao = new Date()
+		//
+		membroInstance.dataDeValidadeDoCartao = new Date() + 1095
 
 		membroInstance.endereco = enderecoService.saveEndereco(params, membroInstance)
 
@@ -159,6 +143,14 @@ class MembroController {
 			])
 			redirect(action: "show", id: params.id)
 		}
+	}
+	
+	def emiteCartao = {
+		def membroInstance = Membro.get(params.id)
+		
+		def resultadoCiracaoDoCartao = membroService.criaCartaoDeMembro(membroInstance, request)
+		
+		render "<pre>${membroInstance}</pre>"
 	}
 	
 	def getFoto = {
