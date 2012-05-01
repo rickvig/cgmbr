@@ -32,9 +32,8 @@ class MembroController {
 		def membroInstance = new Membro(params)
 
 		membroInstance.status = Membro.ATIVO
-		membroInstance.dataDeEmissao = new Date()
-		//
-		membroInstance.dataDeValidadeDoCartao = new Date() + 1095
+		membroInstance.dataDeInclusao = new Date()
+
 
 		membroInstance.endereco = enderecoService.saveEndereco(params, membroInstance)
 
@@ -145,13 +144,6 @@ class MembroController {
 		}
 	}
 	
-	def emiteCartao = {
-		def membroInstance = Membro.get(params.id)
-		
-		def resultadoCiracaoDoCartao = membroService.criaCartaoDeMembro(membroInstance, request)
-		
-		render "<pre>${membroInstance}</pre>"
-	}
 	
 	def getFoto = {
 		def membroInstance = Membro.get(params.id)

@@ -22,8 +22,6 @@ class Membro {
 	String naturalidade
 	String estadoCivil
 	Date dataDeBatismo
-	Date dataDeEmissao
-	Date dataDeValidadeDoCartao
 	String RG
 	String CPF
 	String telefoneResidencial
@@ -32,6 +30,7 @@ class Membro {
 	String email
 	String status
 	String congregacao
+	Date dataDeInclusao
 	
 	Endereco endereco
 	
@@ -55,6 +54,7 @@ class Membro {
 		dataDeBatismo(nullable:true)
 		congregacao(blank:true)
 		cargo(blank:false)
+		dataDeInclusao(nullable:true)
 		foto maxSize: 1024 * 1024 * 1
 	}
 	

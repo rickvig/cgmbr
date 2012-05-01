@@ -635,13 +635,13 @@ form.login {
 	filter: alpha(opacity =         90);
 	border: 1px solid #BBBBBB;
 	color: #666666;
-	width: 380px;
+	width: 400px;
 	-webkit-border-radius: 15px;
 	-moz-border-radius: 15px;
 	border-radius: 15px;
 	padding: 30px;
 	position: absolute;
-	left: 33%;
+	left: 34%;
 	top: 36%;
 }
 
