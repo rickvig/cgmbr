@@ -106,7 +106,7 @@
 			<g:form action="signIn" controller="auth" class="login shadow">
 				<input type="hidden" name="targetUri" value="${targetUri}" />
 				<p>
-					<label class="tag required">Usuario:</label>
+					<label class="tag required">Usu&aacute;rio:</label>
 					<input type="text" name="username" id="username" value="${username}" />
 				</p>
 				<p>
@@ -116,10 +116,12 @@
 				<p class="panelButton">
 					<input type="submit" value="Entrar" />
 				</p>
+				<!-- 
 				<p>
 					<g:link controller="solicitacaoAcesso" action="create">
-						Novo usuário: Solicite seu acesso aqui</g:link>
+						Novo usu&acute;rio: Solicite seu acesso aqui</g:link>
 				</p>
+				 -->
 
 				<g:if test="${flash.message}">
 					<div class="errors">
