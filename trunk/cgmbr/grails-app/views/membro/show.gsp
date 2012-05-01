@@ -26,7 +26,7 @@
 				</g:link>
 			</li>
 			<li>
-				<g:link class="create" controller="carterinha" action="emiteCartao" id="${membroInstance.id}">
+				<g:link title="Emite carterinha de Membro para Impressão" class="create" controller="carterinha" action="emiteCartao" id="${membroInstance.id}">
 					<g:message code="default.emitiCartao.label" args="[entityName]" default="Emitir Cart&atilde;o de Membro" />
 				</g:link>
 			</li>
@@ -236,6 +236,9 @@
 				</g:link>
 				<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}"
 					onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+				<g:link title="Emite carterinha de Membro para Impressão" class="create" controller="carterinha" action="emiteCartao" id="${membroInstance.id}">
+					<g:message code="default.emitiCartao.label" args="[entityName]" default="Emitir Cart&atilde;o de Membro" />
+				</g:link>
 			</fieldset>
 		</g:form>
 	</div>
