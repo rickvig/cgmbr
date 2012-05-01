@@ -50,7 +50,7 @@ class MembroService {
 			def reportPdf = jasperService.generateReport(reportDef)
 			def reportMySql = new ByteArrayInputStream(reportPdf.toByteArray())
 
-			println "reportMySql: "+reportMySql
+//			println "reportMySql: "+reportMySql
 
 			carterinha.tipoConteudo = JasperExportFormat.PDF_FORMAT
 			carterinha.tamanhoArquivo = reportPdf.size()
@@ -60,7 +60,7 @@ class MembroService {
 //				carterinha.dados.add(it)
 //			}
 			
-			println "reportPdf: "+reportPdf
+			println "reportPdf OK: "
 			return reportMySql
 
 		}
