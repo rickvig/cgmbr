@@ -1,13 +1,13 @@
 
 -- inserts Cidades -- 
 
-select * from cgmbr.estado
+--select * from cgmbr.estado
 
-desc cgmbr.cidade
+--desc cgmbr.cidade
 
-select * from cgmbr.cidade 
+--select * from cgmbr.cidade 
 
---estado 1:Rondonia
+--estado 1 Rondonia
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 1, 'Alta Floresta D''Oeste');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 1, 'Ariquemes');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 1, 'Cabixi');
@@ -61,7 +61,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 1, '
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 1, 'Vale do Anari');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 1, 'Vale do Paraíso');
 
-----estado 2:Acre
+--estado 2 Acre
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 2, 'Acrelândia');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 2, 'Assis Brasil');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 2, 'Brasiléia');
@@ -85,7 +85,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 2, '
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 2, 'Xapuri');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 2, 'Porto Acre');
 
-----estado 3:Amazonas
+--estado 3 Amazonas
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 3, 'Alvarães');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 3, 'Amaturá');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 3, 'Anamã');
@@ -149,7 +149,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 3, '
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 3, 'Urucará');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 3, 'Urucurituba');
 
--- estado 4:Roraima
+-- estado 4 Roraima
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 4, 'Amajari');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 4, 'Alto Alegre');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 4, 'Boa Vista');
@@ -166,7 +166,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 4, '
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 4, 'São Luiz');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 4, 'Uiramutã');
 
--- estado: 5:Para
+-- estado  5 Para
 
 
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 5, 'Abaetetuba');
@@ -313,7 +313,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 5, '
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 5, 'Vitória do Xingu');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 5, 'Xinguara');
 
----- estado 6:Amapá
+-- estado 6 Amapá
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 6, 'Serra do Navio');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 6, 'Amapá');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 6, 'Pedra Branca do Amapari');
@@ -332,7 +332,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 6, '
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 6, 'Vitória do Jari');
 
 
----- estado 7:Tocantis
+-- estado 7 Tocantis
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 7, 'Abreulândia');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 7, 'Aguiarnópolis');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 7, 'Aliança do Tocantins');
@@ -473,7 +473,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 7, '
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 7, 'Wanderlândia');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 7, 'Xambioá');
 
----- estado 8:Maranhão
+-- estado 8 Maranhão
 
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 8, 'Açailândia');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 8, 'Afonso Cunha');
@@ -693,7 +693,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 8, '
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 8, 'Vitorino Freire');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 8, 'Zé Doca');
 
--- estado 9:Piaui
+-- estado 9 Piaui
 
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 9, 'Acauã');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 9, 'Agricolândia');
@@ -919,7 +919,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 9, '
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 9, 'Vila Nova do Piauí');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 9, 'Wall Ferraz');
 
--- estado 10:Ceara
+-- estado 10 Ceara
 
 
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 10, 'Abaiara');
@@ -1107,7 +1107,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 10, 
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 10, 'Várzea Alegre');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 10, 'Viçosa do Ceará');
 
----- estado 11:Riogrande do norte
+-- estado 11 Riogrande do norte
 
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 11, 'Acari');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 11, 'Açu');
@@ -1277,7 +1277,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 11, 
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 11, 'Viçosa');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 11, 'Vila Flor');
 
----- estado 12:Paraiba
+-- estado 12 Paraiba
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 12, 'Água Branca');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 12, 'Aguiar');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 12, 'Alagoa Grande');
@@ -1503,7 +1503,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 12, 
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 12, 'Zabelê');
 
 
--- estado 13:pernambuco
+-- estado 13 pernambuco
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 13, 'Abreu e Lima');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 13, 'Afogados da Ingazeira');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 13, 'Afrânio');
@@ -1690,7 +1690,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 13, 
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 13, 'Vitória de Santo Antão');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 13, 'Xexéu');
 
---estado 14:Alagoas
+--estado 14 Alagoas
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 14, 'Água Branca');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 14, 'Anadia');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 14, 'Arapiraca');
@@ -1794,7 +1794,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 14, 
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 14, 'União dos Palmares');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 14, 'Viçosa');
 
---estado 15:sergie
+--estado 15 sergie
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 15, 'Amparo de São Francisco');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 15, 'Aquidabã');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 15, 'Aracaju');
@@ -1872,7 +1872,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 15, 
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 15, 'Umbaúba');
 
 
--- estado 16:Bahia
+-- estado 16 Bahia
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 16, 'Abaíra');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 16, 'Abaré');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 16, 'Acajutiba');
@@ -2291,7 +2291,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 16, 
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 16, 'Wenceslau Guimarães');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 16, 'Xique-Xique');
 
--- estado 17:minas gerais
+-- estado 17 minas gerais
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 17, 'Abadia dos Dourados');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 17, 'Abaeté');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 17, 'Abre Campo');
@@ -3147,7 +3147,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 17, 
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 17, 'Wenceslau Braz');
 
 
---estado 18:espirito santo
+--estado 18 espirito santo
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 18, 'Afonso Cláudio');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 18, 'Águia Branca');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 18, 'Água Doce do Norte');
@@ -3227,7 +3227,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 18, 
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 18, 'Vila Velha');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 18, 'Vitória');
 
---estado 19:rio de janeiro
+--estado 19 rio de janeiro
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 19, 'Angra dos Reis');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 19, 'Aperibé');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 19, 'Araruama');
@@ -3322,7 +3322,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 19, 
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 19, 'Volta Redonda');
 
 
---estado 20:Sai paulo
+--estado 20 Sai paulo
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 20, 'Adamantina');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 20, 'Adolfo');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 20, 'Aguaí');
@@ -3969,7 +3969,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 20, 
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 20, 'Chavantes');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 20, 'Estiva Gerbi');
 
---estado 21:Parana
+--estado 21 Parana
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 21, 'Abatiá');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 21, 'Adrianópolis');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 21, 'Agudos do Sul');
@@ -4370,7 +4370,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 21, 
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 21, 'Vitorino');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 21, 'Xambrê');
 
--- estado 22:santa catarina
+-- estado 22 santa catarina
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 22, 'Abdon Batista');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 22, 'Abelardo Luz');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 22, 'Agrolândia');
@@ -4665,7 +4665,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 22, 
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 22, 'Xaxim');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 22, 'Zortéa');
 
--- estado 23:Rio grande so sul
+-- estado 23 Rio grande so sul
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 23, 'Aceguá');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 23, 'Água Santa');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 23, 'Agudo');
@@ -5163,7 +5163,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 23, 
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 23, 'Westfalia');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 23, 'Xangri-lá');
 
--- estado 25:Mato Grosso
+-- estado 25 Mato Grosso
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 25, 'Acorizal');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 25, 'Água Boa');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 25, 'Alta Floresta');
@@ -5306,7 +5306,7 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 25, 
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 25, 'Nova Maringá');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 25, 'Nova Monte Verde');
 
--- estado 26:Goais
+-- estado 26 Goais
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 26, 'Abadia de Goiás');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 26, 'Abadiânia');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 26, 'Acreúna');
@@ -5554,16 +5554,10 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 26, 
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 26, 'Vila Boa');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 26, 'Vila Propício');
 
--- estado 27:Distrito federal
+-- estado 27 Distrito federal
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 27, 'Brasília');
 
-
-
-
-
-
-
--- estado 24:matogrosso do sul
+-- estado 24 matogrosso do sul
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 24, 'Água Clara');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 24, 'Alcinópolis');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 24, 'Amambai');
@@ -5642,14 +5636,5 @@ INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 24, 
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 24, 'Terenos');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 24, 'Três Lagoas');
 INSERT INTO cgmbr.cidade (id, version, estado_id, nome) VALUES (DEFAULT, 1, 24, 'Vicentina');
-
-
-
-
-
-
-
-
-
 
 

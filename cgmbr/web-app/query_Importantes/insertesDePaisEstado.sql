@@ -1,9 +1,9 @@
 
 -- Inserts de Pais -- 
 
-select * from cgmbr.pais
+--select * from cgmbr.pais
 
-desc cgmbr.pais
+--desc cgmbr.pais
 
 INSERT INTO cgmbr.pais (id, version, nome) VALUES (DEFAULT, 1, 'Nome');
 INSERT INTO cgmbr.pais (id, version, nome) VALUES (DEFAULT, 1, 'Afeganistão');
@@ -253,9 +253,9 @@ INSERT INTO cgmbr.pais (id, version, nome) VALUES (DEFAULT, 1, 'Zimbabwe');
 
 -- Inserte de Estados -- pais 29 Brasil
 
-desc cgmbr.estado
+--desc cgmbr.estado
 
-select * from cgmbr.estado
+--select * from cgmbr.estado
 
 INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Rondônia           ','RO');
 INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Acre               ','AC');
