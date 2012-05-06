@@ -34,8 +34,7 @@ class MembroController {
 		membroInstance.status = Membro.ATIVO
 		membroInstance.dataDeInclusao = new Date()
 
-
-		membroInstance.endereco = enderecoService.saveEndereco(params, membroInstance)
+		membroInstance.endereco = enderecoService.saveEndereco(params)
 
 		if (!membroInstance.save(flush: true)) {
 			render(view: "create", model: [membroInstance: membroInstance])
@@ -88,7 +87,7 @@ class MembroController {
 			return
 		}
 
-		membroInstance.endereco = enderecoService.saveEndereco(params, membroInstance)
+		membroInstance.endereco = enderecoService.saveEndereco(params)
 		if (params.version) {
 			def version = params.version.toLong()
 			if (membroInstance.version > version) {

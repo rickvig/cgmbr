@@ -4,7 +4,7 @@ import com.membro.Membro;
 
 class EnderecoService {
 
-	def saveEndereco(Map parametros, Membro membro) {
+	def saveEndereco(Map parametros) {
 
 		def endereco
 
@@ -16,7 +16,6 @@ class EnderecoService {
 			endereco = Endereco.get(idEndereco)
 		}
 		
-		endereco.membro = membro
 		endereco.pais = Pais.get(parametros.pais.id)
 		endereco.estado = Estado.get(parametros.estado.id)
 		endereco.cidade = Cidade.get(parametros.cidade.id)
@@ -25,8 +24,6 @@ class EnderecoService {
 		endereco.bairro = parametros.bairro
 		endereco.numero = parametros.numero
 		endereco.complemento = parametros.complemento
-
-		
 		
 		if(!endereco.save()){
 			println "erros: "+endereco.errors

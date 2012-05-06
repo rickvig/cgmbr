@@ -1,5 +1,6 @@
 package com.membro
 
+import com.congregacao.Congregacao;
 import com.endereco.Endereco;
 
 class Membro {
@@ -17,7 +18,6 @@ class Membro {
 	String nome
 	String nomePai
 	String nomeMae
-	String cargo
 	Date dataDeNascimento
 	String naturalidade
 	String estadoCivil
@@ -29,11 +29,10 @@ class Membro {
 	String telefoneCelular
 	String email
 	String status
-	String congregacao
 	Date dataDeInclusao
-	
 	Endereco endereco
-	
+	Cargo cargo
+	Congregacao congregacao
 	byte[] foto
 	
 	static constraints = {
@@ -53,7 +52,7 @@ class Membro {
 		estadoCivil(blank:false, inList: [SOLTEIRO, CASADO, SEPARADO, DIVORCIADO, VIUVO, OUTROS])
 		dataDeBatismo(nullable:true)
 		congregacao(blank:true)
-		cargo(blank:false)
+		cargo(blank:false, nullable:false)
 		dataDeInclusao(nullable:true)
 		foto maxSize: 1024 * 1024 * 1
 	}
