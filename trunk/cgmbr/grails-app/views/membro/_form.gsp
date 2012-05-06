@@ -1,3 +1,4 @@
+<%@page import="com.congragacao.Congregacao"%>
 <%@ page import="com.membro.Membro"%>
 
 <%--<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>--%>
@@ -162,15 +163,17 @@
 		<g:message code="membro.congregacao.label" default="Congregacao" />
 
 	</label>
-	<g:textField name="congregacao" value="${membroInstance?.congregacao}" />
+	<g:select name="status" from="${com.congregacao.Congregacao.list()}" required="" value="${membroInstance?.congregacao}" valueMessagePrefix="membro.congregacao" />
 </div>
+
+
 
 <div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'cargo', 'error')} required">
 	<label for="cargo">
 		<g:message code="membro.cargo.label" default="Cargo" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="cargo" required="" value="${membroInstance?.cargo}" />
+	<g:select name="status" from="${com.membro.Cargo.list()}" required="" value="${membroInstance?.cargo}" valueMessagePrefix="membro.cargo" />
 </div>
 
 
@@ -179,7 +182,7 @@
 		<g:message code="membro.foto.label" default="Foto" />
 		<span class="required-indicator">*</span>
 	</label>
-	<input type="file" id="foto" name="foto"/>
+	<input type="file" id="foto" name="foto" />
 </div>
 
 
