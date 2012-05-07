@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_carterinha" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="545" leftMargin="30" rightMargin="20" topMargin="20" bottomMargin="20">
-	<property name="ireport.zoom" value="2.593742460100017"/>
-	<property name="ireport.x" value="610"/>
-	<property name="ireport.y" value="96"/>
+	<property name="ireport.zoom" value="2.1435888100000136"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="CODIGO_ID" class="java.lang.Long">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
 	<queryString>
 		<![CDATA[SELECT
      membro.`id` AS membro_id,
-     membro.`cargo` AS membro_cargo,
-     membro.`congregacao` AS membro_congregacao,
      membro.`data_de_batismo` AS membro_data_de_batismo,
      membro.`data_de_inclusao` AS membro_data_de_inclusao,
      membro.`data_de_nascimento` AS membro_data_de_nascimento,
@@ -32,17 +30,23 @@
      estado.`sigla` AS estado_sigla,
      endereco.`numero` AS endereco_numero,
      endereco.`bairro` AS endereco_bairro,
-     endereco.`rua` AS endereco_rua
+     endereco.`rua` AS endereco_rua,
+     cargo.`id` AS cargo_id,
+     cargo.`nome` AS cargo_nome,
+     membro.`cargo_id` AS membro_cargo_id,
+     congregacao.`id` AS congregacao_id,
+     congregacao.`nome` AS congregacao_nome,
+     membro.`congregacao_id` AS membro_congregacao_id
 FROM
-     `endereco` endereco INNER JOIN `membro` membro ON endereco.`id` = membro.`endereco_id`
-     INNER JOIN `cidade` cidade ON endereco.`cidade_id` = cidade.`id`
+     `endereco` endereco INNER JOIN `cidade` cidade ON endereco.`cidade_id` = cidade.`id`
      INNER JOIN `estado` estado ON endereco.`estado_id` = estado.`id`
+     INNER JOIN `membro` membro ON endereco.`id` = membro.`endereco_id`
+     INNER JOIN `cargo` cargo ON membro.`cargo_id` = cargo.`id`
+     INNER JOIN `congregacao` congregacao ON membro.`congregacao_id` = congregacao.`id`
 WHERE
      membro.`id` = $P{CODIGO_ID}]]>
 	</queryString>
 	<field name="membro_id" class="java.lang.Long"/>
-	<field name="membro_cargo" class="java.lang.String"/>
-	<field name="membro_congregacao" class="java.lang.String"/>
 	<field name="membro_data_de_batismo" class="java.sql.Timestamp"/>
 	<field name="membro_data_de_inclusao" class="java.sql.Timestamp"/>
 	<field name="membro_data_de_nascimento" class="java.sql.Timestamp"/>
@@ -65,6 +69,12 @@ WHERE
 	<field name="endereco_numero" class="java.lang.String"/>
 	<field name="endereco_bairro" class="java.lang.String"/>
 	<field name="endereco_rua" class="java.lang.String"/>
+	<field name="cargo_id" class="java.lang.Long"/>
+	<field name="cargo_nome" class="java.lang.String"/>
+	<field name="membro_cargo_id" class="java.lang.Long"/>
+	<field name="congregacao_id" class="java.lang.Long"/>
+	<field name="congregacao_nome" class="java.lang.String"/>
+	<field name="membro_congregacao_id" class="java.lang.Long"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -119,7 +129,7 @@ WHERE
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="293" y="1" width="253" height="20"/>
+				<reportElement x="279" y="1" width="280" height="22"/>
 				<textElement textAlignment="Center">
 					<font size="16" isBold="true"/>
 				</textElement>
@@ -200,7 +210,7 @@ WHERE
 				<textElement>
 					<font size="6"/>
 				</textElement>
-				<textFieldExpression class="java.sql.Timestamp"><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format($F{membro_data_de_batismo})]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{membro_data_de_batismo})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="316" y="101" width="59" height="10"/>
@@ -214,7 +224,7 @@ WHERE
 				<textElement>
 					<font size="6"/>
 				</textElement>
-				<textFieldExpression class="java.sql.Timestamp"><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format($F{membro_data_de_inclusao})]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{membro_data_de_inclusao})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="307" y="145" width="202" height="5"/>
@@ -265,19 +275,12 @@ Apóstolo Celso Santos]]></text>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{membro_nome_mae}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="76" y="126" width="25" height="10"/>
+				<reportElement x="76" y="137" width="25" height="10"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<text><![CDATA[CARGO:]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="101" y="126" width="100" height="10"/>
-				<textElement>
-					<font size="6"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{membro_cargo}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement x="76" y="95" width="50" height="10"/>
 				<textElement>
@@ -290,7 +293,7 @@ Apóstolo Celso Santos]]></text>
 				<textElement>
 					<font size="6"/>
 				</textElement>
-				<textFieldExpression class="java.sql.Timestamp"><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format($F{membro_data_de_nascimento})]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{membro_data_de_nascimento})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="76" y="105" width="51" height="10"/>
@@ -307,24 +310,45 @@ Apóstolo Celso Santos]]></text>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{membro_naturalidade}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="-4" y="0" width="253" height="20"/>
+				<reportElement x="-16" y="1" width="280" height="22"/>
 				<textElement textAlignment="Center">
 					<font size="16" isBold="true"/>
 				</textElement>
 				<text><![CDATA[IGREJA BATISTA RENOVADA]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="96" y="15" width="140" height="15"/>
+				<reportElement x="96" y="17" width="140" height="15"/>
 				<textElement textAlignment="Right"/>
 				<text><![CDATA[Miniestério Missão da Fé]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="96" y="27" width="140" height="10"/>
+				<reportElement x="96" y="28" width="140" height="10"/>
 				<textElement textAlignment="Right">
 					<font size="7"/>
 				</textElement>
 				<text><![CDATA[Maringá - Paraná - Brasil]]></text>
 			</staticText>
+			<textField>
+				<reportElement x="101" y="137" width="100" height="10"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cargo_nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="76" y="126" width="54" height="10"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[CONGREGAÇÃO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="126" width="100" height="10"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{congregacao_nome}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 </jasperReport>

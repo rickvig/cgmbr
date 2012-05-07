@@ -163,7 +163,10 @@
 		<g:message code="membro.congregacao.label" default="Congregacao" />
 
 	</label>
-	<g:select name="status" from="${com.congregacao.Congregacao.list()}" required="" value="${membroInstance?.congregacao}" valueMessagePrefix="membro.congregacao" />
+	<g:select id="congregacao" name="congregacao.id" from="${com.congregacao.Congregacao.list()}" required="" 
+			value="${membroInstance?.congregacao}" 
+			optionKey="id"
+	/>
 </div>
 
 
@@ -173,7 +176,10 @@
 		<g:message code="membro.cargo.label" default="Cargo" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select name="status" from="${com.membro.Cargo.list()}" required="" value="${membroInstance?.cargo}" valueMessagePrefix="membro.cargo" />
+	<g:select id="cargo" name="cargo.id" from="${com.membro.Cargo.list()}" required="" 
+			value="${membroInstance?.cargo}" 
+			optionKey="id"
+		/>
 </div>
 
 

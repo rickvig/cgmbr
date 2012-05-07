@@ -75,7 +75,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: congregacaoInstance?.endereco, field: 'rua', 'error')} required">
 	<label for="rua">
-		<g:message code="endereco.rua.label" default="Rua" />
+		<g:message code="endereco.rua.label" default="Logradouro" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="rua" required="" value="${congregacaoInstance?.endereco?.rua}" />

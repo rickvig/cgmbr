@@ -84,7 +84,8 @@
 			</a>
 			<g:link controller="membro" action="create">Cadastrar Membro</g:link>
 			<g:link controller="membro" action="list">Listagem de Membros</g:link>
-
+			<g:link controller="cargo" action="list">Cargos</g:link>
+			<g:link controller="congregacao" action="list">Congrega&ccedil;&otilde;es</g:link>
 		</div>
 		<br />
 		<g:layoutBody />
