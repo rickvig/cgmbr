@@ -26,7 +26,7 @@
 				</g:link>
 			</li>
 			<li>
-				<g:link title="Emite carterinha de Membro para Impressão" class="create" controller="carterinha" action="emiteCartao" id="${membroInstance.id}">
+				<g:link title="Emite carterinha de Membro para Impressão" class="" controller="carterinha" action="emiteCartao" id="${membroInstance.id}">
 					<g:message code="default.emitiCartao.label" args="[entityName]" default="Emitir Cart&atilde;o de Membro" />
 				</g:link>
 			</li>
@@ -162,7 +162,9 @@
 			<g:if test="${membroInstance?.endereco}">
 				<li class="fieldcontain">
 					<span id="endereco-label" class="property-label"> <g:message code="membro.endereco.label" default="Endereco:" />
-					</span> <span class="property-value" aria-labelledby="endereco-label"> <g:link controller="endereco" action="show"
+					</span> 
+					<span class="property-value" aria-labelledby="endereco-label"> 
+						<g:link controller="endereco" action="show"
 							id="${membroInstance?.endereco?.id}">
 							${membroInstance?.endereco?.encodeAsHTML()}
 						</g:link>
@@ -202,16 +204,25 @@
 			<g:if test="${membroInstance?.congregacao}">
 				<li class="fieldcontain">
 					<span id="congregacao-label" class="property-label"> <g:message code="membro.congregacao.label" default="Congregacao:" />
-					</span> <span class="property-value" aria-labelledby="congregacao-label"> <g:fieldValue bean="${membroInstance}" field="congregacao" />
+					</span> 
+					<span class="property-value" aria-labelledby="congregacao-label"> 
+						<g:link controller="congregacao" action="show"
+							id="${membroInstance?.congregacao?.id}">
+							${membroInstance?.congregacao?.encodeAsHTML()}
+						</g:link>
 					</span>
-
 				</li>
 			</g:if>
 
 			<g:if test="${membroInstance?.cargo}">
 				<li class="fieldcontain">
 					<span id="cargo-label" class="property-label"> <g:message code="membro.cargo.label" default="Cargo:" />
-					</span> <span class="property-value" aria-labelledby="cargo-label"> <g:fieldValue bean="${membroInstance}" field="cargo" />
+					</span> 
+					<span class="property-value" aria-labelledby="cargo-label"> 
+					<g:link controller="cargo" action="show"
+							id="${membroInstance?.cargo?.id}">
+							${membroInstance?.cargo?.encodeAsHTML()}
+						</g:link>
 					</span>
 
 				</li>

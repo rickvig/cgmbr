@@ -5,7 +5,6 @@
 
 --desc cgmbr.pais
 
-INSERT INTO cgmbr.pais (id, version, nome) VALUES (DEFAULT, 1, 'Nome');
 INSERT INTO cgmbr.pais (id, version, nome) VALUES (DEFAULT, 1, 'Afeganistão');
 INSERT INTO cgmbr.pais (id, version, nome) VALUES (DEFAULT, 1, 'África do Sul');
 INSERT INTO cgmbr.pais (id, version, nome) VALUES (DEFAULT, 1, 'Albânia');
@@ -251,37 +250,37 @@ INSERT INTO cgmbr.pais (id, version, nome) VALUES (DEFAULT, 1, 'Wallis e Futuna'
 INSERT INTO cgmbr.pais (id, version, nome) VALUES (DEFAULT, 1, 'Zâmbia');
 INSERT INTO cgmbr.pais (id, version, nome) VALUES (DEFAULT, 1, 'Zimbabwe');
 
--- Inserte de Estados -- pais 29 Brasil
+-- Inserte de Estados -- pais 28 Brasil
 
 --desc cgmbr.estado
 
 --select * from cgmbr.estado
 
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Rondônia           ','RO');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Acre               ','AC');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Amazonas           ','AM');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Roraima            ','RR');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Pará               ','PA');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Amapá              ','AP');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Tocantins          ','TO');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Maranhão           ','MA');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Piauí              ','PI');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Ceará              ','CE');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Rio Grande do Norte','RN');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Paraíba            ','PB');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Pernambuco         ','PE');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Alagoas            ','AL');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Sergipe            ','SE');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Bahia              ','BA');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Minas Gerais       ','MG');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Espírito Santo     ','ES');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Rio de Janeiro     ','RJ');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'São Paulo          ','SP');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Paraná             ','PR');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Santa Catarina     ','SC');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Rio Grande do Sul  ','RS');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Mato Grosso do Sul ','MS');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Mato Grosso        ','MT');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Goiás              ','GO');
-INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 29, 'Distrito Federal             ','DF');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Rondônia           ','RO');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Acre               ','AC');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Amazonas           ','AM');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Roraima            ','RR');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Pará               ','PA');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Amapá              ','AP');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Tocantins          ','TO');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Maranhão           ','MA');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Piauí              ','PI');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Ceará              ','CE');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Rio Grande do Norte','RN');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Paraíba            ','PB');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Pernambuco         ','PE');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Alagoas            ','AL');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Sergipe            ','SE');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Bahia              ','BA');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Minas Gerais       ','MG');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Espírito Santo     ','ES');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Rio de Janeiro     ','RJ');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'São Paulo          ','SP');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Paraná             ','PR');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Santa Catarina     ','SC');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Rio Grande do Sul  ','RS');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Mato Grosso do Sul ','MS');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Mato Grosso        ','MT');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Goiás              ','GO');
+INSERT INTO cgmbr.estado (id, version, pais_id, nome, sigla) VALUES (DEFAULT, 1, 28, 'Distrito Federal             ','DF');
 
