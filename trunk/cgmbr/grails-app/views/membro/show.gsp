@@ -1,4 +1,5 @@
 
+<%@page import="com.membro.Cargo"%>
 <%@ page import="com.membro.Membro"%>
 <!doctype html>
 <html>
@@ -16,18 +17,8 @@
 	<div class="nav" role="navigation">
 		<ul>
 			<li>
-				<g:link class="list" action="list">
-					<g:message code="default.list.label" args="[entityName]" />
-				</g:link>
-			</li>
-			<li>
-				<g:link class="create" action="create">
-					<g:message code="default.new.label" args="[entityName]" />
-				</g:link>
-			</li>
-			<li>
-				<g:link title="Emite carterinha de Membro para Impressão" class="" controller="carterinha" action="emiteCartao" id="${membroInstance.id}">
-					<g:message code="default.emitiCartao.label" args="[entityName]" default="Emitir Cart&atilde;o de Membro" />
+				<g:link title="Emite carterinha de Membro para Impressão" class="report" controller="carterinha" action="emiteCartao" id="${membroInstance.id}">
+					<g:message code="default.emitiCartao.label" args="[entityName]" default="Emitir Cart&atilde;o de ${membroInstance.cargo.toString()}" />
 				</g:link>
 			</li>
 			<!-- li>
@@ -247,7 +238,7 @@
 				</g:link>
 				<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}"
 					onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-				<g:link title="Emite carterinha de Membro para Impressão" class="create" controller="carterinha" action="emiteCartao" id="${membroInstance.id}">
+				<g:link title="Emite carterinha de Membro para Impressão" class="report" controller="carterinha" action="emiteCartao" id="${membroInstance.id}">
 					<g:message code="default.emitiCartao.label" args="[entityName]" default="Emitir Cart&atilde;o de Membro" />
 				</g:link>
 			</fieldset>
