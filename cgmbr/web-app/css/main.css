@@ -699,32 +699,10 @@ div.panelButton {
 }
 
 div.userInfo { /* 	background-color: #FEFEFE; */
-	/* 	border-width: 1px 1px 0 1px; */
-	/* 	border-style: solid; */
-	/* 	border-color: transparent; */
-	/* 	color: black; */
-	/* 	display: block; */
-	/* 	height: 30px; */
-	/* 	position: absolute; */
-	/* 	right: 22px; */
-	/* 	top: 43px; */
-	/* 	width: 250px; */
-	/* 	-webkit-border-top-left-radius: 10px; */
-	/* 	-webkit-border-top-right-radius: 10px; */
-	/* 	-moz-border-radius-topleft: 10px; */
-	/* 	-moz-border-radius-topright: 10px; */
-	/* 	border-top-left-radius: 10px; */
-	/* 	border-top-right-radius: 10px; */
-	/* 	background-image: url(../images/nav-bg-usr.png); */
-	/* 	background-repeat: repeat-x; */
-	/* 	background-position: bottom; */
-	/* 	-moz-box-shadow: 2px -2px 4px #2E4402; */
-	/* 	-webkit-box-shadow: 2px -2px 4px #2E4402; */
-	/* 	box-shadow: 2px -2px 4px #2E4402; */
 	background-position: center bottom;
 	border-color: transparent;
 	border-style: solid;
-	border-top-left-radius: 10px;
+	border-top-left-radius: 0px;
 	border-top-right-radius: 10px;
 	border-width: 1px 1px 0;
 	box-shadow: 2px -2px 4px #000;
@@ -740,7 +718,7 @@ div.userInfo { /* 	background-color: #FEFEFE; */
 }
 
 div.userInfo p {
-	padding: 1px;
+	padding: 2px;
 }
 
 div.loginBtn a {
