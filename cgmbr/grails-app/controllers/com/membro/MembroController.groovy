@@ -34,7 +34,11 @@ class MembroController {
 		membroInstance.status = Membro.ATIVO
 		membroInstance.dataDeInclusao = new Date()
 
-		membroInstance.endereco = enderecoService.saveEndereco(params)
+		try {
+			membroInstance.endereco = enderecoService.saveEndereco(params)
+		} catch (Exception e) {
+			flash.message = e.cause.message
+		}
 
 		if (!membroInstance.save(flush: true)) {
 			render(view: "create", model: [membroInstance: membroInstance])
@@ -142,12 +146,11 @@ class MembroController {
 			redirect(action: "show", id: params.id)
 		}
 	}
-	
-	
+
+
 	def getFoto = {
 		def membroInstance = Membro.get(params.id)
 		byte[] image = membroInstance.foto
 		response.outputStream << image
 	}
-	
 }

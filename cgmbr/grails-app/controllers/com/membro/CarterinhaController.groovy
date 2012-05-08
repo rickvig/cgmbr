@@ -2,16 +2,19 @@ package com.membro
 
 class CarterinhaController {
 
-    def scaffold = Carterinha
-	
+	def scaffold = Carterinha
+
 	def membroService
-	
+
 	def emiteCartao = {
 		def membroInstance = Membro.get(params.id)
+		def carterinhaDeMembro
 		
-		def carterinhaDeMembro = membroService.criaCartaoDeMembro(membroInstance, request)
-		
+		try {
+			carterinhaDeMembro = membroService.criaCartaoDeMembro(membroInstance, request)
+		} catch (Exception e) {
+			flash.message = e.cause.message
+		}
 		response.outputStream << carterinhaDeMembro
-		//render "<pre>${membroInstance}</pre>"
 	}
 }
