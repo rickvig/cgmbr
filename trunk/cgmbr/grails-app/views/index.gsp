@@ -81,7 +81,8 @@ p {
 		<h1 align="center">Bem-vindo ao CGM-IBR - Cadastro Geral de Membros da Igreja Batista Renovada</h1>
 
 		<div id="page-body" role="main">
-			<p>Este sistema tem como objetivo realizar o cadastro de membros da Igreja Batista Renovada Sede Mundial</p>
+			<p>Este sistema tem como objetivo realizar o cadastro de membros da Igreja Batista Renovada Sede Mundial. Assim formalizando um roll de membro
+				da mesma. </p>
 		</div>
 
 		<div>
@@ -100,6 +101,7 @@ p {
 				</tbody>
 			</table>
 		</div>
+		-->
 
 	</shiro:isLoggedIn>
 </body>

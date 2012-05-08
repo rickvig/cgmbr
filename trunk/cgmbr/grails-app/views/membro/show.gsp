@@ -32,6 +32,7 @@
 	<div id="show-membro" class="content scaffold-show" role="main">
 		<h1>
 			<g:message code="default.show.label" args="[entityName]" />
+			<!-- Carterinha Emitida: <img src="cgmbr/web-app/images/skin/docok_24.png"/> -->
 		</h1>
 		<g:if test="${flash.message}">
 			<div class="message" role="status">
@@ -43,8 +44,9 @@
 			<g:if test="${membroInstance?.foto}">
 				<li class="fieldcontain">
 					<span id="status-label" class="property-label"> <g:message code="membro.foto.label" default="Foto:" />
-					</span> <span class="property-value" aria-labelledby="status-label"> <!-- foto do membro 3x4 cm -> 84x114 px --> <img width="84" height="114"
-							src="${createLink(controller:'membro', action:'getFoto', id: membroInstance?.id)}" />
+					</span> 
+					<span class="property-value" aria-labelledby="status-label"> <!-- foto do membro 3x4 cm -> 84x114 px --> 
+					<img width="84" height="114" src="${createLink(controller:'membro', action:'getFoto', id: membroInstance?.id)}" />
 					</span>
 				</li>
 			</g:if>
