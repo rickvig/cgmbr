@@ -1,5 +1,5 @@
 
-<%@ page import="com.congragacao.Congregacao" %>
+<%@ page import="com.congregacao.Congregacao" %>
 <!doctype html>
 <html>
 	<head>

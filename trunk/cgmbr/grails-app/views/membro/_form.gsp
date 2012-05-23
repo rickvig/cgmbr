@@ -1,4 +1,4 @@
-<%@page import="com.congragacao.Congregacao"%>
+<%@page import="com.congregacao.Congregacao"%>
 <%@ page import="com.membro.Membro"%>
 
 <%--<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>--%>
