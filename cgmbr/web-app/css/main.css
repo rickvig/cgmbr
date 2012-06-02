@@ -144,7 +144,7 @@ div.sysDate {
 
 .footer {
 	background: #7993C4;
-	color: #000;
+	color: #ccc;
 	clear: both;
 	font-size: 0.8em;
 	margin-top: 1.5em;
@@ -159,7 +159,9 @@ div.sysDate {
 }
 
 .footer a {
-	color: #255b17;
+	color: #ccc;
+	text-decoration: none;
+	text-align: center;
 }
 
 .spinner {
@@ -712,7 +714,7 @@ div.userInfo { /* 	background-color: #FEFEFE; */
 	display: block;
 	height: 32px;
 	position: absolute;
-	right: 85px;
+	right: 115px;
 	top: 180px;
 	width: 250px;
 }
