@@ -1,8 +1,5 @@
 dataSource {
 	pooled = true
-	driverClassName = "org.h2.Driver"
-	username = "sa"
-	password = ""
 }
 
 /*
@@ -21,28 +18,27 @@ hibernate {
 environments {
 	development {
 		dataSource {
-			//dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-			//url = "jdbc:h2:mem:devDb;MVCC=TRUE"
-
 			driverClassName = "com.mysql.jdbc.Driver"
 			username = "root"
 			password = "55761"
-			dbCreate = "update" // one of 'create', 'create-drop','update', 'none'
+			dbCreate = "none" // one of 'create', 'create-drop','update', 'none'
 			url = "jdbc:mysql://localhost:3306/cgmbr"
-
-
 		}
 	}
+	
 	test {
 		dataSource {
 			dbCreate = "update"
 			url = "jdbc:h2:mem:testDb;MVCC=TRUE"
 		}
 	}
+	
 	production {
 		dataSource {
-			dbCreate = "update"
-			url = "jdbc:h2:prodDb;MVCC=TRUE"
+			username = "root"
+			password = "55761"
+			dbCreate = "none"
+			url = "jdbc:mysql://localhost:3306/cgmbr"
 			pooled = true
 			properties {
 				maxActive = -1

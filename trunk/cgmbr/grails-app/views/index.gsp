@@ -81,12 +81,12 @@ p {
 		<h1 align="center">Bem-vindo ao CGM-IBR - Cadastro Geral de Membros da Igreja Batista Renovada</h1>
 
 		<div id="page-body" role="main">
-			<p>Este sistema tem como objetivo realizar o cadastro de membros da Igreja Batista Renovada Sede Mundial. Assim formalizando um roll de membro
+			<p>Este sistema tem como objetivo realizar o cadastro de membros da Igreja Batista Renovada. Assim formalizando um roll de membro
 				da mesma. </p>
 		</div>
 
 		<div>
-			<!-- listagem dos controladores!!! -->
+			<!-- listagem dos controladores!!! ->
 			<table>
 				<tbody>
 					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">

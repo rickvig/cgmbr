@@ -42,6 +42,10 @@
 	font-weight: bold;
 	margin: 0.8em 0.6em 0.3em;
 }
+
+marca-agua {
+	background-color: red
+}
 </style>
 
 </head>
@@ -59,6 +63,9 @@
 	
 	<div id="grailsLogo" role="banner">
 		<img src="${resource(dir: 'images', file: 'logo_batista.png')}" alt="Grails" />
+<%--		<div class="marca-agua">--%>
+<%--			<img src="${resource(dir: 'images', file: 'logo_batista.png')}" alt="Grails" />--%>
+<%--		</div>--%>
 		<div class="textLogo">
 			<h1>SCGM - Sistema de Cadastro Geral de Membros</h1>
 		</div>
@@ -89,7 +96,9 @@
 		</div>
 		<br />
 		<g:layoutBody />
-		<div class="footer" role="contentinfo"></div>
+		<div class="footer" role="contentinfo">
+			<a href="http://www.din.uem.br/~ra55761/"><pre>Desenvolvido Por Henrique Vignando [BSA]</pre></a>
+		</div>
 		<div id="spinner" class="spinner" style="display: none;">
 			<g:message code="spinner.alt" default="Loading&hellip;" />
 		</div>
@@ -100,8 +109,8 @@
 	<shiro:isNotLoggedIn>
 		<div style="text-align: center; margin: 0pt auto; padding-top: 40px; padding-left: 200px">
 			<script type="text/javascript">
-				$j(document).ready(function() {
-					$j('#username').focus();
+				$(document).ready(function() {
+					$('#username').focus();
 				})
 			</script>
 			<g:form action="signIn" controller="auth" class="login shadow">

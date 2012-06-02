@@ -37,9 +37,9 @@ class MembroService {
 
 			def reportDef
 			if(membro.cargo.toString() == Cargo.MINISTRO){
-				reportDef = new JasperReportDef(name:"report_carterinha_ministro.jrxml", fileFormat:JasperExportFormat.PDF_FORMAT, reportData: new ArrayList(), parameters: ["CODIGO_ID" : membro.id])
+				reportDef = new JasperReportDef(name:"report_carterinha_ministro_maior.jrxml", fileFormat:JasperExportFormat.PDF_FORMAT, reportData: new ArrayList(), parameters: ["CODIGO_ID" : membro.id])
 			} else{
-				reportDef = new JasperReportDef(name:"report_carterinha_membro.jrxml", fileFormat:JasperExportFormat.PDF_FORMAT, reportData: new ArrayList(), parameters: ["CODIGO_ID" : membro.id])
+				reportDef = new JasperReportDef(name:"report_carterinha_membro_maior.jrxml", fileFormat:JasperExportFormat.PDF_FORMAT, reportData: new ArrayList(), parameters: ["CODIGO_ID" : membro.id])
 			}
 			def reportPdf = jasperService.generateReport(reportDef)
 			def reportMySql = new ByteArrayInputStream(reportPdf.toByteArray())
