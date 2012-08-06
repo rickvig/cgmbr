@@ -32,8 +32,14 @@
 		<g:message code="endereco.pais.label" default="Pais" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="pais" name="pais.id" from="${com.endereco.Pais.list()}" optionKey="id" required="" value="${congregacaoInstance?.endereco?.pais?.id}"
-		class="many-to-one" />
+	<g:set value="28" var="br"></g:set>
+	<g:select id="pais" 
+			name="pais.id" 
+			from="${com.endereco.Pais.list()}" 
+			optionKey="id"
+			required="" 
+			value="${congregacaoInstance?.endereco?.pais?.id ? congregacaoInstance?.endereco?.pais?.id : br}"
+			class="many-to-one" />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: congregacaoInstance?.endereco, field: 'estado', 'error')} required">
@@ -41,12 +47,13 @@
 		<g:message code="endereco.estado.label" default="Estado" />
 		<span class="required-indicator">*</span>
 	</label>
+	<g:set value="21" var="pr"></g:set>
 	<g:select id="estado" 
 			name="estado.id" 
 			from="${com.endereco.Estado.list()}" 
 			optionKey="id" 
 			required=""
-			value="${congregacaoInstance?.endereco?.estado?.id}" 
+			value="${congregacaoInstance?.endereco?.estado?.id ? congregacaoInstance?.endereco?.estado?.id : pr}" 
 			onchange="getCidadadePorEstado();"
 			class="many-to-one" />
 </div>
@@ -56,12 +63,13 @@
 		<g:message code="endereco.cidade.label" default="Cidade" />
 		<span class="required-indicator">*</span>
 	</label>
+	<g:set value="4119" var="mga"></g:set>
 	<g:select id="cidade" 
 			name="cidade.id" 
 			from="${com.endereco.Cidade.list()}" 
 			optionKey="id" 
 			required=""
-			value="${congregacaoInstance?.endereco?.cidade?.id}" 
+			value="${congregacaoInstance?.endereco?.cidade?.id ? congregacaoInstance?.endereco?.cidade?.id : mga}" 
 			class="many-to-one" />
 </div>
 
