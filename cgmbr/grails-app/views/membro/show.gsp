@@ -17,16 +17,10 @@
 	<div class="nav" role="navigation">
 		<ul>
 			<li>
-				<g:link title="Emite carterinha de Membro para Impressão" class="report" controller="carterinha" action="emiteCartao" id="${membroInstance.id}">
+				<g:link  title="Emite carterinha de Membro para Impressão" class="report" controller="carterinha" action="emiteCartao" id="${membroInstance.id}" target="blank">
 					<g:message code="default.emitiCartao.label" args="[entityName]" default="Emitir Cart&atilde;o de ${membroInstance.cargo.toString()}" />
 				</g:link>
 			</li>
-			<!-- li>
-				<g:jasperReport jasper="report_carterinha" 
-						format="PDF" 
-						name="Carterinha do Membro">
-				</g:jasperReport>
-			</li -->
 		</ul>
 	</div>
 	<div id="show-membro" class="content scaffold-show" role="main">
@@ -240,7 +234,7 @@
 				</g:link>
 				<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}"
 					onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-				<g:link title="Emite carterinha de Membro para Impressão" class="report" controller="carterinha" action="emiteCartao" id="${membroInstance.id}">
+				<g:link title="Emite carterinha de Membro para Impressão" class="report" controller="carterinha" action="emiteCartao" id="${membroInstance.id}" target="blank">
 					<g:message code="default.emitiCartao.label" args="[entityName]" default="Emitir Cart&atilde;o de Membro" />
 				</g:link>
 			</fieldset>
