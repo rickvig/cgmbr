@@ -28,8 +28,8 @@ class Membro {
 	String telefoneComercial
 	String telefoneCelular
 	String email
-	String status
-	Date dataDeInclusao
+	String status = ATIVO
+	Date dataDeInclusao = new Date()
 	Endereco endereco
 	Cargo cargo
 	Congregacao congregacao
@@ -42,11 +42,11 @@ class Membro {
 		nomeMae(blank:true)
 		dataDeNascimento(nullable:false)
 		RG(blank:false)
-		CPF(blank:false, unique:true, cpf:true)
+		CPF(blank:true, unique:true, cpf:true)
 		telefoneResidencial(blank:true)
 		telefoneComercial(blank:true)
 		telefoneCelular(blank:true)
-		email(email:true)
+		email(blank:true, email:true)
 		endereco(nullable:true, blank:true)
 		naturalidade(blank:true)
 		estadoCivil(blank:false, inList: [SOLTEIRO, CASADO, SEPARADO, DIVORCIADO, VIUVO, OUTROS])

@@ -27,8 +27,7 @@ class EnderecoService {
 		
 		if(!endereco.save()){
 			println "erros: "+endereco.errors
-			throw new Exception("", "Erro ao salver endereco, "+endereco.errors)
-			println "saveEndereco - erro"
+			throw new Exception("Erro ao salver endereco.")
 			return
 		}
 
