@@ -1,9 +1,9 @@
 
 -- Inserts de Pais -- 
 
---select * from cgmbr.pais
+-- select * from cgmbr.pais
 
---desc cgmbr.pais
+-- desc cgmbr.pais
 
 INSERT INTO cgmbr.pais (id, version, nome) VALUES (DEFAULT, 1, 'Afeganistão');
 INSERT INTO cgmbr.pais (id, version, nome) VALUES (DEFAULT, 1, 'África do Sul');
