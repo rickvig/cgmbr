@@ -152,7 +152,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'dataDeBatismo', 'error')} ">
 	<label for="dataDeBatismo">
-		<g:message code="membro.dataDeBatismo.label" default="Data De Batismo" />
+		<g:message code="membro.dataDeBatismo.label" default="Data De Batismo/Consagração" />
 
 	</label>
 	<g:datePicker name="dataDeBatismo" precision="day" value="${membroInstance?.dataDeBatismo}" default="none" noSelection="['': '']" />
