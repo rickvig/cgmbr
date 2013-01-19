@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta name="layout" content="main">
-<g:set var="entityName" value="${message(code: 'membro.label', default: 'Membro')}" />
+<g:set var="entityName" value="${message(code: 'membro.label', default: 'Membro')} ${membroInstance?.id}" />
 <title>
 	<g:message code="default.show.label" args="[entityName]" />
 </title>
@@ -180,7 +180,7 @@
 
 			<g:if test="${membroInstance?.dataDeBatismo}">
 				<li class="fieldcontain">
-					<span id="dataDeBatismo-label" class="property-label"> <g:message code="membro.dataDeBatismo.label" default="Data De Batismo:" />
+					<span id="dataDeBatismo-label" class="property-label"> <g:message code="membro.dataDeBatismo.label" default="Data De Batismo/Consagração:" />
 					</span> <span class="property-value" aria-labelledby="dataDeBatismo-label"> <g:formatDate format="dd/MM/yyyy"
 							date="${membroInstance?.dataDeBatismo}" />
 					</span>

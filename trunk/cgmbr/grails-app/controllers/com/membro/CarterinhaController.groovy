@@ -5,18 +5,17 @@ class CarterinhaController {
 	def scaffold = Carterinha
 
 	def membroService
+	def carterinhaService
 
 	def emiteCartao = {
 		def membroInstance = Membro.get(params.id)
-		def carterinhaDeMembro
-		
-		println "CarterinhaController - emiteCartao : EMITINDO CARTERINHA..."
 		
 		try {
-			carterinhaDeMembro = membroService.criaCartaoDeMembro(membroInstance, request)
+			def carterinhaDeMembro = carterinhaService.criaCartaoDeMembro(membroInstance, request)
+			response.outputStream << carterinhaDeMembro
 		} catch (Exception e) {
 			flash.message = e
+			redirect(controller: 'membro', action: 'show', params:[id: membroInstance.id])
 		}
-		response.outputStream << carterinhaDeMembro
 	}
 }

@@ -37,19 +37,16 @@
 						<g:sortableColumn property="email" title="${message(code: 'membro.email.label', default: 'Email')}" />
 						
 						<g:sortableColumn property="status" title="${message(code: 'membro.status.label', default: 'Status')}" />
-						
-					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${membroInstanceList}" status="i" var="membroInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
 						<td>${fieldValue(bean: membroInstance, field: "id")}</td>
 					
 						<td><g:link action="show" id="${membroInstance.id}">${fieldValue(bean: membroInstance, field: "nome")}</g:link></td>
 					
-						<td>${fieldValue(bean: membroInstance, field: "cargo")}</td>
+						<td><g:link controller="cargo" action="show" id="${membroInstance.cargo.id}">${fieldValue(bean: membroInstance, field: "cargo")}</g:link></td>
 						
 						<td>${fieldValue(bean: membroInstance, field: "congregacao")}</td>
 						
@@ -60,9 +57,6 @@
 						<td>${fieldValue(bean: membroInstance, field: "email")}</td>
 					
 						<td>${fieldValue(bean: membroInstance, field: "status")}</td>
-						
-						
-						
 					</tr>
 				</g:each>
 				</tbody>

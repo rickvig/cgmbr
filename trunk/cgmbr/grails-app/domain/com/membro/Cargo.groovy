@@ -5,14 +5,7 @@ class Cargo {
 	public static final String MEMBRO = "Membro"
 	public static final String MINISTRO = "Ministro"
 
-	static mapping = {
-		//table 'Cargo'
-		//coisas joinTable: 'NOME_TABELA_JOIN'
-	}
-	
-	//static hasMany = [:]
-	//or
-	//static belongsTo = Cargo
+	static hasMany = [membros: Membro]
 	
 	String nome
 	
