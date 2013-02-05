@@ -1,4 +1,5 @@
 <!doctype html>
+<%@page import="com.membro.Membro"%>
 <html>
 <head>
 <meta name="layout" content="main" />
@@ -38,7 +39,7 @@
 }
 
 #page-body {
-	margin: 2em 1em 1.25em 18em;
+	margin: 2em 10em 1.25em 5em;
 }
 
 h2 {
@@ -83,9 +84,10 @@ p {
 		<div id="page-body" role="main">
 			<p>Este sistema tem como objetivo realizar o cadastro de membros da Igreja Batista Renovada. Assim formalizando um roll de membro
 				da mesma. </p>
+			<p style="margin: 1em;">
+				Total Membros cadastrados: ${Membro.list().size()}
+			</p>
 		</div>
-
-		<div>
 			<!-- listagem dos controladores!!! ->
 			<table>
 				<tbody>
@@ -100,8 +102,8 @@ p {
 					</g:each>
 				</tbody>
 			</table>
-		</div>
 		-->
+		</div>
 
 	</shiro:isLoggedIn>
 </body>

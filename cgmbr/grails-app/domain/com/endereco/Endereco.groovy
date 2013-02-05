@@ -13,14 +13,14 @@ class Endereco {
 	Pais pais
 	
 	static constraints = {
-		pais(blank:true)
+		pais(blank:true, nullable:true)
 		estado(blank:false)
 		cidade(nullable:false)
-		cep(blank:true, cep:true)
-		rua(blank:false, nullable:false)
+		cep(blank:true, nullable:true, cep:true)
+		rua(blank:false, nullable:true)
 		bairro(blank:false)
 		numero(blank:false)
-		complemento(blank:true)
+		complemento(blank:true, nullable:true)
 	}
 	
 	public String toString(){

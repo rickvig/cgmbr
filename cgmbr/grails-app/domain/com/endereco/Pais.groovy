@@ -2,16 +2,12 @@ package com.endereco
 
 class Pais {
 
-	static mapping = {
-		//table 'Pais'
-		//coisas joinTable: 'NOME_TABELA_JOIN'
-	}
-	
-	static hasMany = [estados: Estado]
-	//or
-	//static belongsTo = Pais
+	static final BRA = "Brasil"
+	static final PTG = "Portugal"
 	
 	String nome
+	
+	static hasMany = [estados: Estado]
 	
 	static constraints = {
 		nome(blank:false)

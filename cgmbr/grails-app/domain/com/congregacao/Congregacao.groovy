@@ -5,15 +5,12 @@ import com.membro.Membro;
 
 class Congregacao {
 
-	static mapping = {
-		//table 'Congregacao'
-		//coisas joinTable: 'NOME_TABELA_JOIN'
-	}
-	
-	static hasMany = [membros: Membro]
+	static final SEDE = "Sede"	
 	
 	String nome
 	Endereco endereco
+	
+	static hasMany = [membros: Membro]
 	
 	static constraints = {
 		nome(blank:false, nullable:false)

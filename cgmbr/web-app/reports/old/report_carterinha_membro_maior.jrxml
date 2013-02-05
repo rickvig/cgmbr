@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_carterinha" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="545" leftMargin="30" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="2.253944402704737"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="3"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="CODIGO_ID" class="java.lang.Long"/>
+	<queryString>
+		<![CDATA[SELECT
+     membro.`id` AS membro_id,
+     membro.`data_de_batismo` AS membro_data_de_batismo,
+     membro.`data_de_inclusao` AS membro_data_de_inclusao,
+     membro.`data_de_nascimento` AS membro_data_de_nascimento,
+     membro.`estado_civil` AS membro_estado_civil,
+     membro.`foto` AS membro_foto,
+     membro.`naturalidade` AS membro_naturalidade,
+     membro.`nome` AS membro_nome,
+     membro.`nome_mae` AS membro_nome_mae,
+     membro.`nome_pai` AS membro_nome_pai,
+     membro.`status` AS membro_status,
+     membro.`endereco_id` AS membro_endereco_id,
+     endereco.`id` AS endereco_id,
+     endereco.`cidade_id` AS endereco_cidade_id,
+     endereco.`estado_id` AS endereco_estado_id,
+     cidade.`id` AS cidade_id,
+     cidade.`nome` AS cidade_nome,
+     estado.`id` AS estado_id,
+     estado.`nome` AS estado_nome,
+     estado.`sigla` AS estado_sigla,
+     endereco.`numero` AS endereco_numero,
+     endereco.`bairro` AS endereco_bairro,
+     endereco.`rua` AS endereco_rua,
+     cargo.`id` AS cargo_id,
+     cargo.`nome` AS cargo_nome,
+     membro.`cargo_id` AS membro_cargo_id,
+     congregacao.`id` AS congregacao_id,
+     congregacao.`nome` AS congregacao_nome,
+     membro.`congregacao_id` AS membro_congregacao_id,
+     carterinha.`data_de_validade` AS carterinha_data_de_validade,
+     carterinha.`membro_id` AS carterinha_membro_id,
+     carterinha.`id` AS carterinha_id,
+     carterinha.`data_de_emissao` AS carterinha_data_de_emissao
+FROM
+     `endereco` endereco INNER JOIN `cidade` cidade ON endereco.`cidade_id` = cidade.`id`
+     INNER JOIN `estado` estado ON endereco.`estado_id` = estado.`id`
+     INNER JOIN `membro` membro ON endereco.`id` = membro.`endereco_id`
+     INNER JOIN `cargo` cargo ON membro.`cargo_id` = cargo.`id`
+     INNER JOIN `congregacao` congregacao ON membro.`congregacao_id` = congregacao.`id`
+     INNER JOIN `carterinha` carterinha ON membro.`id` = carterinha.`membro_id`
+WHERE
+     membro.`id` = $P{CODIGO_ID}]]>
+	</queryString>
+	<field name="membro_id" class="java.lang.Long"/>
+	<field name="membro_data_de_batismo" class="java.sql.Timestamp"/>
+	<field name="membro_data_de_inclusao" class="java.sql.Timestamp"/>
+	<field name="membro_data_de_nascimento" class="java.sql.Timestamp"/>
+	<field name="membro_estado_civil" class="java.lang.String"/>
+	<field name="membro_foto" class="java.io.InputStream"/>
+	<field name="membro_naturalidade" class="java.lang.String"/>
+	<field name="membro_nome" class="java.lang.String"/>
+	<field name="membro_nome_mae" class="java.lang.String"/>
+	<field name="membro_nome_pai" class="java.lang.String"/>
+	<field name="membro_status" class="java.lang.String"/>
+	<field name="membro_endereco_id" class="java.lang.Long"/>
+	<field name="endereco_id" class="java.lang.Long"/>
+	<field name="endereco_cidade_id" class="java.lang.Long"/>
+	<field name="endereco_estado_id" class="java.lang.Long"/>
+	<field name="cidade_id" class="java.lang.Long"/>
+	<field name="cidade_nome" class="java.lang.String"/>
+	<field name="estado_id" class="java.lang.Long"/>
+	<field name="estado_nome" class="java.lang.String"/>
+	<field name="estado_sigla" class="java.lang.String"/>
+	<field name="endereco_numero" class="java.lang.String"/>
+	<field name="endereco_bairro" class="java.lang.String"/>
+	<field name="endereco_rua" class="java.lang.String"/>
+	<field name="cargo_id" class="java.lang.Long"/>
+	<field name="cargo_nome" class="java.lang.String"/>
+	<field name="membro_cargo_id" class="java.lang.Long"/>
+	<field name="congregacao_id" class="java.lang.Long"/>
+	<field name="congregacao_nome" class="java.lang.String"/>
+	<field name="membro_congregacao_id" class="java.lang.Long"/>
+	<field name="carterinha_data_de_validade" class="java.sql.Timestamp"/>
+	<field name="carterinha_membro_id" class="java.lang.Long"/>
+	<field name="carterinha_id" class="java.lang.Long"/>
+	<field name="carterinha_data_de_emissao" class="java.sql.Timestamp"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="251" splitType="Stretch">
+			<image>
+				<reportElement x="277" y="1" width="268" height="179"/>
+				<imageExpression class="java.lang.String"><![CDATA["/home/henrique/CGMBR/new-carterinha/card_button_back.gif"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="0" y="1" width="268" height="179"/>
+				<imageExpression class="java.lang.String"><![CDATA["/home/henrique/CGMBR/new-carterinha/card_button_front.gif"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement key="staticText" x="75" y="66" width="51" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[MATRÍCULA:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="126" y="66" width="50" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{membro_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText" x="75" y="77" width="29" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[NOME:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="104" y="77" width="164" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{membro_nome}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement key="image" x="9" y="66" width="59" height="67"/>
+				<imageExpression class="java.io.InputStream"><![CDATA[$F{membro_foto}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement key="staticText" x="278" y="28" width="263" height="7"/>
+				<textElement textAlignment="Center">
+					<font size="5"/>
+				</textElement>
+				<text><![CDATA["...GUARDA O QUE TENS, PARA QUE NINGUÉM TOME A TUA COROA". Apocalipse 3:11
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="288" y="46" width="49" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[ENDEREÇO:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="337" y="46" width="150" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{endereco_rua}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="337" y="55" width="150" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{endereco_bairro}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText" x="288" y="75" width="36" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CIDADE:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="324" y="75" width="49" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cidade_nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText" x="373" y="75" width="16" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[UF:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="389" y="75" width="68" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{estado_sigla}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText" x="288" y="85" width="60" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[ESTADO CIVIL:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="348" y="85" width="104" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{membro_estado_civil}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText" x="288" y="101" width="78" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[DATA DE BATISMO:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="367" y="101" width="100" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{membro_data_de_batismo})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText" x="288" y="111" width="78" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[DATA DE EMISSÃO:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="367" y="111" width="100" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{carterinha_data_de_emissao})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText" x="287" y="160" width="202" height="6"/>
+				<textElement>
+					<font size="5"/>
+				</textElement>
+				<text><![CDATA[OBS. Em caso de morte ou exclusão a credencial deverá ser devolvida a Sede.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="388" y="125" width="153" height="33"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[_________________________________
+PRESIDENTE NACIONAL
+Apóstolo Celso Santos]]></text>
+			</staticText>
+			<image>
+				<reportElement key="image" x="433" y="99" width="59" height="48"/>
+				<imageExpression class="java.lang.String"><![CDATA["/home/henrique/workspace/cgmbr/web-app/images/assinatura_defaltu.gif"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement key="staticText" x="75" y="89" width="44" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[NOME PAI:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="119" y="89" width="145" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{membro_nome_pai}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText" x="75" y="99" width="49" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[NOME MÃE:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="124" y="99" width="145" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{membro_nome_mae}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText" x="75" y="152" width="34" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CARGO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="75" y="115" width="68" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[DATA DE NASC.:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="143" y="115" width="125" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{membro_data_de_nascimento})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText" x="75" y="125" width="68" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[NATURALIDADE:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="143" y="125" width="125" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{membro_naturalidade}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText" x="-11" y="1" width="288" height="22"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IGREJA BATISTA RENOVADA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="107" y="19" width="153" height="15"/>
+				<textElement textAlignment="Right">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Ministério Missão da Fé]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="103" y="31" width="157" height="15"/>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Maringá - Paraná - Brasil]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="109" y="152" width="100" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cargo_nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText" x="75" y="141" width="69" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CONGREGAÇÃO:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="143" y="141" width="100" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{congregacao_nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText" x="288" y="136" width="45" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[VALIDADE:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="333" y="136" width="100" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{carterinha_data_de_validade})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText" x="56" y="46" width="145" height="13"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cartão de Membro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="264" y="4" width="288" height="22"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IGREJA BATISTA RENOVADA]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
