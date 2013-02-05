@@ -10,6 +10,7 @@
 	<g:message code="default.show.label" args="[entityName]" />
 </title>
 </head>
+
 <body>
 	<a href="#show-membro" class="skip" tabindex="-1">
 		<g:message code="default.link.skip.label" default="Skip to content&hellip;" />
@@ -37,10 +38,10 @@
 		<ol class="property-list membro">
 			<g:if test="${membroInstance?.foto}">
 				<li class="fieldcontain">
-					<span id="status-label" class="property-label"> <g:message code="membro.foto.label" default="Foto:" />
-					</span> 
-					<span class="property-value" aria-labelledby="status-label"> <!-- foto do membro 3x4 cm -> 84x114 px --> 
-					<img width="84" height="114" src="${createLink(controller:'membro', action:'getFoto', id: membroInstance?.id)}" />
+<%--					<span id="status-label" class="property-label"> <g:message code="membro.foto.label" default="Foto:" />--%>
+<%--					</span> --%>
+					<span class="property-value"  aria-labelledby="status-label"> <!-- foto do membro 3x4 cm -> [tela: 84x114 px]  [real: 354x472] --> 
+						<img width="84" height="112" class="foto-membro" style="left: -7%; top: 0;" src="${createLink(controller:'membro', action:'getFoto', id: membroInstance?.id)}" />
 					</span>
 				</li>
 			</g:if>

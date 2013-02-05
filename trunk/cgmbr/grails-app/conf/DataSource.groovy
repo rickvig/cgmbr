@@ -21,7 +21,7 @@ environments {
 			driverClassName = "com.mysql.jdbc.Driver"
 			username = "root"
 			password = "root"
-			dbCreate = "update" // one of 'create', 'create-drop','update', 'none'
+			dbCreate = "create-drop" // one of 'create', 'create-drop','update', 'none'
 			url = "jdbc:mysql://localhost:3306/cgmbr"
 		}
 	}
@@ -35,9 +35,9 @@ environments {
 	
 	production {
 		dataSource {
-			username = "root"
-			password = "root"
-			dbCreate = "none"
+			username = "cgmbruser"
+			password = "m4n4g3r"
+			dbCreate = "update"
 			url = "jdbc:mysql://localhost:3306/cgmbr"
 			pooled = true
 			properties {

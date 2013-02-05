@@ -12,15 +12,15 @@
 	<a href="#create-membro" class="skip" tabindex="-1">
 		<g:message code="default.link.skip.label" default="Skip to content&hellip;" />
 	</a>
-	<div class="nav" role="navigation">
-		<ul>
-			<li>
-				<g:link class="list" action="list">
-					<g:message code="default.list.label" args="[entityName]" />
-				</g:link>
-			</li>
-		</ul>
-	</div>
+<%--	<div class="nav" role="navigation">--%>
+<%--		<ul>--%>
+<%--			<li>--%>
+<%--				<g:link class="list" action="list">--%>
+<%--					<g:message code="default.list.label" args="[entityName]" />--%>
+<%--				</g:link>--%>
+<%--			</li>--%>
+<%--		</ul>--%>
+<%--	</div>--%>
 	<div id="create-membro" class="content scaffold-create" role="main">
 		<h1>
 			<g:message code="default.new.label" args="[entityName]" />
