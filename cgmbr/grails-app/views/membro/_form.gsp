@@ -1,18 +1,14 @@
 <%@page import="com.congregacao.Congregacao"%>
-<%@ page import="com.membro.Membro"%>
+<%@page import="com.membro.Membro"%>
+<%@page import="java.util.Calendar"%>
 
-<%--<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>--%>
-<%--<script type="text/javascript" src="http://jquery-joshbush.googlecode.com/files/jquery.maskedinput-1.2.1.pack.js"></script>--%>
-<%--<script type="text/javascript">--%>
-<%--	$(function() {--%>
-<%--		$("#cpf").mask("999.999.999-99");--%>
-<%----%>
-<%--		// Contents of textboxes will be selected when receiving focus.--%>
-<%--		$("input[type=text]").focus(function() {--%>
-<%--			$(this).select();--%>
-<%--		});--%>
-<%--	});--%>
-<%--</script>--%>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#cpf").mask("999.999.999-99");
+	});
+</script>
+
+<g:set var="year" value="${Calendar.getInstance().get(Calendar.YEAR)}" />
 
 <g:if test="${membroInstance.id}">
 	<div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'status', 'error')} required">
@@ -51,46 +47,27 @@
 	</div>
 </div>
 
-
 <div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'dataDeNascimento', 'error')} required">
 	<label for="dataDeNascimento">
 		<g:message code="membro.dataDeNascimento.label" default="Data De Nascimento" />
 		<span class="required-indicator">*</span>
 	</label>
 
-	<%--<script>--%>
-	<%--	$(function() {--%>
-<%--		var date = new Date();--%>
-<%--		var yearAge = date.getFullYear()-100;--%>
-<%--		var year = date.getFullYear();--%>
-<%----%>
-<%--		$( "#datepicker" ).datepicker({--%>
-<%--			yearRange: yearAge+":"+year,//   "2000:2010",--%>
-<%--			changeMonth: true,--%>
-<%--			changeYear: true--%>
-<%--		});--%>
-<%--	});--%>
-	<%--</script>--%>
-
-	<%--	<input id="datepicker" type="date" value="${membroInstance?.dataDeNascimento}">--%>
-
-	<g:datePicker name="dataDeNascimento" precision="day" value="${membroInstance?.dataDeNascimento}" />
+	<g:datePicker name="dataDeNascimento" precision="day" value="${membroInstance?.dataDeNascimento}" years="${1900..year}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'RG', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'RG', 'error')}">
 	<label for="RG">
 		<g:message code="membro.RG.label" default="RG" />
-		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="RG" required="" value="${membroInstance?.RG}" />
+	<g:textField name="RG" value="${membroInstance?.RG}" maxlength="12"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'CPF', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'CPF', 'error')}">
 	<label for="CPF">
-		<g:message code="membro.CPF.label" default="CPF" />
-		<span class="required-indicator">*</span>
+		<g:message code="membro.CPF.label" default="CPF"/>
 	</label>
-	<g:textField id="cpf" name="CPF" required="" value="${membroInstance?.CPF}" />
+	<input type="text" id="cpf" name="CPF" value="${membroInstance?.CPF}" maxlength="14"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'telefoneResidencial', 'error')} ">
@@ -101,20 +78,19 @@
 	<g:textField name="telefoneResidencial" value="${membroInstance?.telefoneResidencial}" />
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'telefoneCelular', 'error')} ">
+	<label for="telefoneCelular">
+		<g:message code="membro.telefoneCelular.label" default="Telefone Celular" />
+	</label>
+	<g:textField name="telefoneCelular" value="${membroInstance?.telefoneCelular}" />
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'telefoneComercial', 'error')} ">
 	<label for="telefoneComercial">
 		<g:message code="membro.telefoneComercial.label" default="Telefone Comercial" />
 
 	</label>
 	<g:textField name="telefoneComercial" value="${membroInstance?.telefoneComercial}" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'telefoneCelular', 'error')} ">
-	<label for="telefoneCelular">
-		<g:message code="membro.telefoneCelular.label" default="Telefone Celular" />
-
-	</label>
-	<g:textField name="telefoneCelular" value="${membroInstance?.telefoneCelular}" />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'email', 'error')} ">
@@ -130,8 +106,6 @@
 	<g:render template="/endereco/formEnderecoMembro"></g:render>
 	<input type="hidden" name="membroEndereco" value="${membroInstance?.endereco?.id}" />
 </fieldset>
-
-
 
 <div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'naturalidade', 'error')} ">
 	<label for="naturalidade">
@@ -155,7 +129,7 @@
 		<g:message code="membro.dataDeBatismo.label" default="Data De Batismo/Consagração" />
 
 	</label>
-	<g:datePicker name="dataDeBatismo" precision="day" value="${membroInstance?.dataDeBatismo}" default="none" noSelection="['': '']" />
+	<g:datePicker name="dataDeBatismo" precision="day" value="${membroInstance?.dataDeBatismo}" default="none" noSelection="['': '']" years="${1900..year}" />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'congregacao', 'error')} ">
@@ -164,12 +138,10 @@
 
 	</label>
 	<g:select id="congregacao" name="congregacao.id" from="${com.congregacao.Congregacao.list()}" required="" 
-			value="${membroInstance?.congregacao}" 
+			value="${membroInstance?.congregacao?.id}" 
 			optionKey="id"
 	/>
 </div>
-
-
 
 <div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'cargo', 'error')} required">
 	<label for="cargo">
@@ -177,11 +149,10 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="cargo" name="cargo.id" from="${com.membro.Cargo.list()}" required="" 
-			value="${membroInstance?.cargo}" 
+			value="${membroInstance?.cargo?.id}" 
 			optionKey="id"
 		/>
 </div>
-
 
 <div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'foto', 'error')} required">
 	<label for="foto">

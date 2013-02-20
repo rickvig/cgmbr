@@ -21,7 +21,7 @@ environments {
 			driverClassName = "com.mysql.jdbc.Driver"
 			username = "root"
 			password = "root"
-			dbCreate = "create-drop" // one of 'create', 'create-drop','update', 'none'
+			dbCreate = "update" // one of 'create', 'create-drop','update', 'none'
 			url = "jdbc:mysql://localhost:3306/cgmbr"
 		}
 	}

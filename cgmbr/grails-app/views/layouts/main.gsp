@@ -5,32 +5,23 @@
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
 <!--<![endif]-->
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title><g:layoutTitle default="Grails" /></title>
-<g:javascript library="jquery" />
-
+<g:javascript library="jquery" plugin="jquery" />
 
 <r:require module="jquery-ui" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon"
-	href="${resource(dir: 'images', file: 'favicon_batista.png')}"
-	type="image/x-icon">
-<link rel="apple-touch-icon"
-	href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
-<link rel="apple-touch-icon" sizes="114x114"
-	href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
+<link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon_batista.png')}" type="image/x-icon">
+<link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
+<link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
 
-<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}"
-	type="text/css">
-<link rel="stylesheet"
-	href="${resource(dir: 'css', file: 'jquery-ui-1.8.18.custom.css')}"
-	type="text/css">
-<link rel="stylesheet"
-	href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
+<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
+<link rel="stylesheet" href="${resource(dir: 'css', file: 'jquery-ui-1.8.18.custom.css')}" type="text/css">
+<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
 
 <g:layoutHead />
 <r:layoutResources />
@@ -68,8 +59,7 @@ marca-agua {
 				</div>
 			</div>
 		</shiro:isLoggedIn>
-		<img src="${resource(dir: 'images', file: 'logo_batista.png')}"
-			alt="Grails" />
+		<img src="${resource(dir: 'images', file: 'logo_batista.png')}" alt="Grails" />
 		<%--		<div class="marca-agua">--%>
 		<%--			<img src="${resource(dir: 'images', file: 'logo_batista.png')}" alt="Grails" />--%>
 		<%--		</div>--%>
@@ -78,9 +68,7 @@ marca-agua {
 		</div>
 		<div class="sysDate">
 			Data:
-			<g:formatDate
-				format="${message(code: '${date.format.precision.day}', default: 'dd/MM/yyyy')}"
-				date="${new Date()}" />
+			<g:formatDate format="${message(code: '${date.format.precision.day}', default: 'dd/MM/yyyy')}" date="${new Date()}" />
 			- Vers&atilde;o:
 			<g:meta name="app.version" />
 		</div>
@@ -95,8 +83,8 @@ marca-agua {
 		</script>
 
 		<div id="radio">
-			<a class="home" href="${createLink(uri: '/')}"> <g:message
-					code="default.home.label" />
+			<a class="home" href="${createLink(uri: '/')}">
+				<g:message code="default.home.label" />
 			</a>
 			<g:link controller="membro" action="create">Cadastrar Membro</g:link>
 			<g:link controller="membro" action="list">Listagem de Membros</g:link>
@@ -106,7 +94,9 @@ marca-agua {
 		<br />
 		<g:layoutBody />
 		<div class="footer" role="contentinfo">
-			<a href="http://www.din.uem.br/~ra55761/"><pre>Desenvolvido Por Henrique Vignando [BSA]</pre></a>
+			<a href="http://www.din.uem.br/~ra55761/">
+				<pre>Desenvolvido Por Henrique Vignando [BSA]</pre>
+			</a>
 		</div>
 		<div id="spinner" class="spinner" style="display: none;">
 			<g:message code="spinner.alt" default="Loading&hellip;" />
@@ -116,8 +106,7 @@ marca-agua {
 	</shiro:isLoggedIn>
 
 	<shiro:isNotLoggedIn>
-		<div
-			style="text-align: center; margin: 0pt auto; padding-top: 40px; padding-left: 200px">
+		<div style="text-align: center; margin: 0pt auto; padding-top: 40px; padding-left: 200px">
 			<script type="text/javascript">
 				$(document).ready(function() {
 					$('#username').focus();
@@ -126,12 +115,12 @@ marca-agua {
 			<g:form action="signIn" controller="auth" class="login shadow">
 				<input type="hidden" name="targetUri" value="${targetUri}" />
 				<p>
-					<label class="tag required">Usu&aacute;rio:</label> <input
-						type="text" name="username" id="username" value="${username}" />
+					<label class="tag required">Usu&aacute;rio:</label>
+					<input type="text" name="username" id="username" value="${username}" />
 				</p>
 				<p>
-					<label class="tag required">Senha:</label> <input type="password"
-						name="password" value="" />
+					<label class="tag required">Senha:</label>
+					<input type="password" name="password" value="" />
 				</p>
 				<p class="panelButton">
 					<input type="submit" value="Entrar" />
