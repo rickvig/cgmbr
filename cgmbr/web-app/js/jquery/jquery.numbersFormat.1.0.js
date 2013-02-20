@@ -83,7 +83,8 @@
 			function numbers_format (str)
 			{
 				// formatting settings
-				var formatted = fill_with_zeroes(to_numbers(str));
+				var number = to_numbers(str);
+				var formatted = fill_with_zeroes(number);
 				var thousandsFormatted = '';
 				var thousandsCount = 0;
 
@@ -207,6 +208,11 @@
 			// If value has content
 			if ($(this).val().length>0)
 			{
+				// Verifica se está vindo do banco somente com uma casa de centavos
+				if(obj.val().match(/.*\.\d$/) || obj.val().match(/.*\,\d$/)){
+					obj.val(obj.val()+"0");				   
+				}
+				
 				format_it();
 				clear_prefix();
 			}
