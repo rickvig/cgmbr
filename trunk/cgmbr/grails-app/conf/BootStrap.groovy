@@ -75,9 +75,7 @@ class BootStrap {
 		
 		///Definição de da congregação Sede
 		if(!Congregacao.findByNome(Congregacao.SEDE)){
-			println "| criando SEDE..."
 			Endereco enderecoSede = new Endereco(pais: bra, estado: pr, cidade: mga, bairro:"Operaria", rua: "Av. Mauá", numero: "1008").save()
-			println "| endereçoe: "+enderecoSede
 			new Congregacao(nome: Congregacao.SEDE, endereco: enderecoSede).save()
 		}
 		

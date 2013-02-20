@@ -11,14 +11,10 @@ class Carterinha {
 
 	Date dataDeEmissao
 	Date dataDeValidade
-	String tipoConteudo
-	Integer tamanhoArquivo
 
 	static constraints = {
 		dataDeEmissao(nullable:true)
 		dataDeValidade(nullable:true)
-		tipoConteudo(nullable:true)
-		tamanhoArquivo(nullable:true)
 	}
 
 }

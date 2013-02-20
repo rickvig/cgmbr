@@ -1,4 +1,5 @@
 
+<%@page import="com.membro.Cargo"%>
 <%@ page import="com.membro.Membro" %>
 <!doctype html>
 <html>
@@ -12,6 +13,8 @@
 		<div class="nav" role="navigation">
 			<ul>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				<li><g:link class="list" action="listPrint" params="${[filterBy: Cargo.MEMBRO]}"><g:message code="default.list.membro.label" args="[entityName]" default="Membros" /></g:link></li>
+				<li><g:link class="list" action="listPrint" params="${[filterBy: Cargo.MINISTRO]}"><g:message code="default.list.ministro.label" args="[entityName]" default="Ministros" /></g:link></li>
 			</ul>
 		</div>
 		<div id="list-membro" class="content scaffold-list" role="main">
@@ -26,7 +29,7 @@
 					
 						<g:sortableColumn property="nome" title="${message(code: 'membro.nome.label', default: 'Nome')}" />
 					
-						<g:sortableColumn property="Cargo" title="${message(code: 'membro.cargo.label', default: 'Cargo')}" />
+						<g:sortableColumn property="cargo" title="${message(code: 'membro.cargo.label', default: 'Cargo')}" />
 						
 						<g:sortableColumn property="congregacao" title="${message(code: 'membro.congregacao.label', default: 'Congregação')}" />
 						
