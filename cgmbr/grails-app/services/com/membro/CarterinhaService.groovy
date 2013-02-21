@@ -7,15 +7,15 @@ class CarterinhaService {
 
 	boolean transactional = true
 
-	static final NOME_REPORT_MEMBRO = "report_membro.jrxml" //"report_carterinha_membro.jrxml"
-	static final NOME_REPORT_MINISTRO = "report_carterinha_ministro.jrxml"
+	static final NOME_REPORT_MEMBRO = "report_membro.jrxml"
+	static final NOME_REPORT_MINISTRO = "report_ministro.jrxml"
 
 	def jasperService
 
 	def criaCartaoDeMembro(Membro membro, def request) {
 		if(!membro){
-			println "| não existe membro para gerar carterinha."
-			throw new Exception("Erro no fechamemto de Avaliações+.")
+			println "| ERRO : não existe membro para gerar carterinha."
+			throw new Exception("Erro ao criar cartao de membro. Membro: ${membro}.")
 		} else{
 
 			//TODO verificar a possibilidade de reabrir a msm carterinha
@@ -35,8 +35,8 @@ class CarterinhaService {
 			}
 
 			if(!carterinha.save(flush: true)){
-				println "| erros: "+carterinha.errors
-				throw new Exception("Erro ao salver carterinha, "+carterinha.errors)
+				println "| ERROS: "+carterinha.errors
+				throw new Exception("Erro ao salvar carterinha, "+carterinha.errors)
 			}
 
 			def reportDef
@@ -55,21 +55,19 @@ class CarterinhaService {
 				reportPdf = jasperService.generateReport(reportDef)
 				reportMySql = new ByteArrayInputStream(reportPdf.toByteArray())
 			} catch (Exception e) {
-				println "| erros: "
-				e.printStackTrace()
+				println "| ERROS: ${e.printStackTrace()}"
 				throw new Exception(e)
 			}
 
 			carterinha.tipoConteudo = JasperExportFormat.PDF_FORMAT
 			carterinha.tamanhoArquivo = reportPdf.size()
 
-			println "reportPdf OK: "
+			println "| LOG - reportPdf OK"
 			return reportMySql
 		}
 	}
 
 
-	//TODO Realizar modificações para enviar o parametro contendo os Ids dos membros 
 	def criaCartaoDeMembro(filterBy, membrosIds, request) {
 
 		membrosIds.each {
@@ -91,13 +89,13 @@ class CarterinhaService {
 			}
 	
 			if(!carterinha.save(flush: true)){
-				println "| erros: "+carterinha.errors
+				println "| ERROS: "+carterinha.errors
 				throw new Exception("Erro ao salver carterinha, "+carterinha.errors)
 			}
 		}
 		
 		String membrosIdsString = membrosIds.toString().replaceAll("[\\[\\]]", "");
-		println "membrosIdsString: "+membrosIdsString
+		println "| LOG - membrosIdsString: "+membrosIdsString
 
 		def reportDef
 		if(filterBy == Cargo.MINISTRO){
@@ -114,8 +112,7 @@ class CarterinhaService {
 			reportPdf = jasperService.generateReport(reportDef)
 			reportMySql = new ByteArrayInputStream(reportPdf.toByteArray())
 		} catch (Exception e) {
-			println "| erros: "
-			e.printStackTrace()
+			println "| ERROS: ${e.printStackTrace()}"
 			throw new Exception(e)
 		}
 

@@ -8,6 +8,13 @@
 <g:set var="entityName"
 	value="${message(code: 'membro.label', default: 'Membro')}" />
 <title><g:message code="default.list.label" args="[entityName]" /></title>
+
+<style type="text/css">
+	td.align-center, th.align-center{
+		text-align: center;	
+	}
+</style>
+
 </head>
 <body>
 	<g:form method="post" controller="carterinha">
@@ -18,12 +25,12 @@
 				<li><g:link class="create" action="create">
 						<g:message code="default.new.label" args="[entityName]" />
 					</g:link></li>
-				<li><g:link class="list" action="listPrint"
+				<li><g:link class="list" action="listFilterBy"
 						params="${[filterBy: Cargo.MEMBRO]}">
 						<g:message code="default.list.membro.label" args="[entityName]"
 							default="Membros" />
 					</g:link></li>
-				<li><g:link class="list" action="listPrint"
+				<li><g:link class="list" action="listFilterBy"
 						params="${[filterBy: Cargo.MINISTRO]}">
 						<g:message code="default.list.ministro.label" args="[entityName]"
 							default="Ministros" />
@@ -59,10 +66,10 @@
 						<g:sortableColumn property="congregacao"
 							title="${message(code: 'membro.congregacao.label', default: 'Congregação')}" />
 
-						<g:sortableColumn property="status"
+						<g:sortableColumn property="status" width="50"
 							title="${message(code: 'membro.status.label', default: 'Status')}" />
 
-						<th align="center">Imprimir Carterinha</th>
+						<th class="align-center">Imprimir Carterinha</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -89,7 +96,7 @@
 								${fieldValue(bean: membroInstance, field: "status")}
 							</td>
 
-							<td width="50"><g:checkBox
+							<td class="align-center" ><g:checkBox
 									name="imprime-${membroInstance.id}" checked="false" /></td>
 						</tr>
 					</g:each>

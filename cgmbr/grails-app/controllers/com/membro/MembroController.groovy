@@ -10,19 +10,9 @@ class MembroController {
 	def fotoService
 	def membroService
 	
-	def list() {
-		
-		println params
-		params.max = Math.min(params.max ? params.int('max') : 10, 100)
-		
-		//def membroList = params.filterBy ? Membro.findAllByCargo(Cargo.findByNome(params.filterBy), params) : Membro.list(params)
-		
-		[membroInstanceList: Membro.list(), membroInstanceTotal: Membro.count]
-	}
 	
-	def listPrint() {
+	def listFilterBy() {
 		
-		println params
 		params.max = Math.min(params.max ? params.int('max') : 10, 100)
 		
 		def membroList = params.filterBy ? Membro.findAllByCargo(Cargo.findByNome(params.filterBy), params) : Membro.list(params)
@@ -31,7 +21,6 @@ class MembroController {
 	}
 	
 	def save() {
-		params.each{ println "- params: "+it }
 		def membroInstance = new Membro(params)
 
 		try {
