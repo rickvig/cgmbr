@@ -15,7 +15,7 @@ class MembroController {
 		
 		params.max = Math.min(params.max ? params.int('max') : 10, 100)
 		
-		def membroList = params.filterBy ? Membro.findAllByCargo(Cargo.findByNome(params.filterBy), params) : Membro.list(params)
+		def membroList = params.filterBy ? Membro.findAllByCargo(Cargo.findByNome(params.filterBy)) : Membro.list(params)
 		
 		[membroInstanceList: membroList, membroInstanceTotal: membroList.size(), filterBy: params.filterBy]
 	}
