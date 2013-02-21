@@ -62,14 +62,7 @@ WHERE
 	<detail>
 		<band height="196" splitType="Stretch">
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="124" y="92" width="67" height="12"/>
-				<textElement>
-					<font size="9"/>
-				</textElement>
-				<textFieldExpression><![CDATA[($F{membro_data_de_batismo} != null ? new SimpleDateFormat("dd/MM/yyyy").format($F{membro_data_de_batismo}) : "--")]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="47" y="123" width="134" height="12"/>
+				<reportElement key="textField" x="57" y="151" width="134" height="12"/>
 				<textElement>
 					<font size="9"/>
 				</textElement>
@@ -83,14 +76,14 @@ WHERE
 				<textFieldExpression><![CDATA[$F{membro_id}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="24" y="138" width="100" height="12"/>
+				<reportElement key="textField" x="34" y="166" width="60" height="12"/>
 				<textElement>
 					<font size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{carterinha_data_de_validade})]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="11" y="61" width="164" height="12"/>
+				<reportElement key="textField" x="30" y="61" width="171" height="12"/>
 				<textElement>
 					<font size="9"/>
 				</textElement>
@@ -108,25 +101,39 @@ WHERE
 				<textFieldExpression><![CDATA[($F{membro_cpf} == null ? "--" : $F{membro_cpf})]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="131" y="107" width="60" height="12"/>
+				<reportElement key="textField" x="134" y="91" width="60" height="12"/>
 				<textElement>
 					<font size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{carterinha_data_de_emissao})]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="24" y="107" width="53" height="12"/>
+				<reportElement key="textField" x="24" y="120" width="60" height="12"/>
 				<textElement>
 					<font size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{membro_estado_civil}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="3" y="76" width="89" height="12"/>
+				<reportElement key="textField" x="7" y="76" width="89" height="12"/>
 				<textElement>
 					<font size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{membro_rg} == null ? "--" : $F{membro_rg})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="57" y="136" width="60" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{membro_data_de_batismo} == null ? "--" : new SimpleDateFormat("dd/MM/yyyy").format($F{membro_data_de_batismo}))]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="24" y="106" width="88" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cargo_nome}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

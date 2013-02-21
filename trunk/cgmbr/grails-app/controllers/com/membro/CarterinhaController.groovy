@@ -38,12 +38,12 @@ class CarterinhaController {
 			} catch (Exception e) {
 				println "Erro: ${e}"
 				flash.message = e
-				redirect(controller: 'membro', action: 'listPrint', params:[filterBy: params.filterBy])
+				redirect(controller: 'membro', action: 'listFilterBy', params:[filterBy: params.filterBy])
 			}
 		} else {
 			println "membrosIds: ${membrosIds}"
 			flash.error = message(code: "carterinha.noselectPrint.message", args: [params.filterBy])
-			redirect(controller: 'membro', action: 'listPrint', params:[filterBy: params.filterBy])
+			redirect(controller: 'membro', action: 'listFilterBy', params:[filterBy: params.filterBy])
 		}
 		
 	}

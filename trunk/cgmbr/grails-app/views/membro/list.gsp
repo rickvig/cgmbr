@@ -12,9 +12,8 @@
 		<a href="#list-membro" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="list" action="listPrint" params="${[filterBy: Cargo.MEMBRO]}"><g:message code="default.list.membro.label" args="[entityName]" default="Membros" /></g:link></li>
-				<li><g:link class="list" action="listPrint" params="${[filterBy: Cargo.MINISTRO]}"><g:message code="default.list.ministro.label" args="[entityName]" default="Ministros" /></g:link></li>
+				<li><g:link class="list" action="listFilterBy" params="${[filterBy: Cargo.MEMBRO]}"><g:message code="default.list.membro.label" args="[entityName]" default="Membros" /></g:link></li>
+				<li><g:link class="list" action="listFilterBy" params="${[filterBy: Cargo.MINISTRO]}"><g:message code="default.list.ministro.label" args="[entityName]" default="Ministros" /></g:link></li>
 			</ul>
 		</div>
 		<div id="list-membro" class="content scaffold-list" role="main">

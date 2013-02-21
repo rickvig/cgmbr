@@ -9,7 +9,6 @@ class EnderecoService {
 		def endereco
 
 		if(!parametros.membroEndereco || parametros.membroEndereco == ""){
-			println "novo endereco: "
 			endereco = new Endereco()
 		} else{
 			Long idEndereco = Long.parseLong(parametros.membroEndereco)
@@ -26,11 +25,11 @@ class EnderecoService {
 		endereco.complemento = parametros.complemento
 		
 		if(!endereco.save()){
-			println "erros: "+endereco.errors
+			println "| ERROS: "+endereco.errors
 			throw new Exception("Erro ao salver endereco.")
 			return
 		}
 
-		return endereco
+		endereco
 	}
 }
