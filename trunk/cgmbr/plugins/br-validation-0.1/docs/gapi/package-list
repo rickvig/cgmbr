@@ -1,0 +1,8 @@
+DefaultPackage
+grails-app.conf
+scripts
+src.groovy.com.skynetalpha.brvalidation
+test.unit
+unzipped
+unzipped.scripts
+unzipped.src.groovy.com.skynetalpha.brvalidation
