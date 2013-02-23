@@ -1,0 +1,13 @@
+<plugin name='br-validation' version='0.1' grailsVersion='1.1.1 &gt; *'>
+  <author>Mr Konno</author>
+  <title>Brazil Validation</title>
+  <description>\
+Add validation for commons units in Brazil
+</description>
+  <documentation>http://grails.org/BrValidation+Plugin</documentation>
+  <resources>
+    <resource>DataSource</resource>
+    <resource>UrlMappings</resource>
+  </resources>
+  <dependencies />
+</plugin>
