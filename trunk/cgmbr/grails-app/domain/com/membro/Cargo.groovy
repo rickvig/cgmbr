@@ -8,9 +8,11 @@ class Cargo {
 	static hasMany = [membros: Membro]
 	
 	String nome
+	String grupo
 	
 	static constraints = {
 		nome(blank:false)
+		grupo(blank:false, inList: [MEMBRO, MINISTRO])
 	}
 	
 	String toString() {
