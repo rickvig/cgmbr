@@ -50,7 +50,7 @@ class Membro {
 		endereco(nullable:true, blank:true)
 		naturalidade(blank:true)
 		estadoCivil(blank:false, inList: [SOLTEIRO, CASADO, SEPARADO, DIVORCIADO, VIUVO, OUTROS])
-		dataDeBatismo(nullable:true)
+		dataDeBatismo(nullable:false, blank:false)
 		congregacao(blank:true)
 		cargo(blank:false, nullable:false)
 		dataDeInclusao(nullable:true)

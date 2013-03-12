@@ -10,7 +10,13 @@ class CongregacaoController {
 		params.each{ println "- params: "+it }
 		def congrecacaoInstance = new Congregacao(params)
 
-		congrecacaoInstance.endereco = enderecoService.saveEndereco(params)
+		try {
+			congrecacaoInstance.endereco = enderecoService.saveEndereco(params)
+		} catch (Exception e) {
+			flash.error = e.printStackTrace()
+			render(view: "edit", model: [congrecacaoInstance: congrecacaoInstance])
+			return
+		}
 
 		if (!congrecacaoInstance.save(flush: true)) {
 			render(view: "create", model: [congrecacaoInstance: congrecacaoInstance])
@@ -34,7 +40,13 @@ class CongregacaoController {
 			redirect(action: "list")
 			return
 		}
-		congrecacaoInstance.endereco = enderecoService.saveEndereco(params)
+		try {
+			congrecacaoInstance.endereco = enderecoService.saveEndereco(params)
+		} catch (Exception e) {
+			flash.error = e.printStackTrace()
+			render(view: "edit", model: [congrecacaoInstance: congrecacaoInstance])
+			return
+		}
 		if (params.version) {
 			def version = params.version.toLong()
 			if (congrecacaoInstance.version > version) {

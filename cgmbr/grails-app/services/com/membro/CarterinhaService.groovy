@@ -40,11 +40,11 @@ class CarterinhaService {
 			}
 
 			def reportDef
-			if(membro.cargo.toString() == Cargo.MINISTRO){
-				reportDef = new JasperReportDef(name:NOME_REPORT_MINISTRO, fileFormat:JasperExportFormat.PDF_FORMAT
-						, reportData: new ArrayList(), parameters: ["CODIGO_ID" : membro.id])
-			} else{
+			if(membro.cargo.grupo == Cargo.MEMBRO){
 				reportDef = new JasperReportDef(name:NOME_REPORT_MEMBRO, fileFormat:JasperExportFormat.PDF_FORMAT
+						, reportData: new ArrayList(), parameters: ["CODIGO_ID" : membro.id])
+			} else if(membro.cargo.grupo == Cargo.MINISTRO){
+				reportDef = new JasperReportDef(name:NOME_REPORT_MINISTRO, fileFormat:JasperExportFormat.PDF_FORMAT
 						, reportData: new ArrayList(), parameters: ["CODIGO_ID" : membro.id])
 			}
 
@@ -99,6 +99,7 @@ class CarterinhaService {
 
 		def reportDef
 		if(filterBy == Cargo.MINISTRO){
+			println "carterinha de ministro"
 			reportDef = new JasperReportDef(name:NOME_REPORT_MINISTRO, fileFormat:JasperExportFormat.PDF_FORMAT
 					, reportData: new ArrayList(), parameters: ["IDS" : membrosIdsString])
 		} else{
@@ -112,8 +113,8 @@ class CarterinhaService {
 			reportPdf = jasperService.generateReport(reportDef)
 			reportMySql = new ByteArrayInputStream(reportPdf.toByteArray())
 		} catch (Exception e) {
-			println "| ERROS: ${e.printStackTrace()}"
-			throw new Exception(e)
+			println "| ERROS: ${e}"
+			throw e
 		}
 
 		println "reportPdf OK: "

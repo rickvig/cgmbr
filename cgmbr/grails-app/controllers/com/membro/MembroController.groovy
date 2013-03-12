@@ -3,30 +3,34 @@ package com.membro
 import org.springframework.dao.DataIntegrityViolationException
 
 class MembroController {
-	
+
 	def scaffold = Membro
-	
+
 	def enderecoService
 	def fotoService
 	def membroService
-	
-	
+
+
 	def listFilterBy() {
-		
+
 		params.max = Math.min(params.max ? params.int('max') : 10, 100)
-		
-		def membroList = params.filterBy ? Membro.findAllByCargo(Cargo.findByNome(params.filterBy)) : Membro.list(params)
-		
-		[membroInstanceList: membroList, membroInstanceTotal: membroList.size(), filterBy: params.filterBy]
+
+		try {
+			def membroList = membroService.membrosPorGrupoCargo(params.filterBy)
+			[membroInstanceList: membroList, membroInstanceTotal: membroList.size(), filterBy: params.filterBy]
+		} catch (Exception e) {
+			redirect(action: "list", params: params)
+		}
+
 	}
-	
+
 	def save() {
 		def membroInstance = new Membro(params)
 
 		try {
 			membroInstance.endereco = enderecoService.saveEndereco(params)
 		} catch (Exception e) {
-			flash.message = e
+			flash.error = e
 		}
 
 		if (!membroInstance.save(flush: true)) {
@@ -85,5 +89,4 @@ class MembroController {
 		byte[] image = membroInstance.foto
 		response.outputStream << image
 	}
-
 }

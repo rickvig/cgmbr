@@ -1,5 +1,7 @@
 package com.membro
 
+import com.sun.xml.internal.ws.api.streaming.XMLStreamReaderFactory.Default;
+
 class CarterinhaController {
 
 	def scaffold = Carterinha
@@ -21,9 +23,16 @@ class CarterinhaController {
 	
 	def emiteCartoes = {
 		
+		params.each { println "	| ${it}" }
+		
 		def parser = "imprime-"
 		def membrosIds = []
-		def membroList = params.filterBy ? Membro.findAllByCargo(Cargo.findByNome(params.filterBy), params) : Membro.list(params) 
+		def membroList = []
+		try {
+			membroList = membroService.membrosPorGrupoCargo(params.filterBy)
+		} catch (Exception e) {
+			flash.error = "Erro ao consultar ${params.filterBy} [${e}]"
+		} 
 		
 		membroList.each{
 			def key = parser+""+it.id
@@ -37,7 +46,7 @@ class CarterinhaController {
 				response.outputStream << carterinhaDeMembro
 			} catch (Exception e) {
 				println "Erro: ${e}"
-				flash.message = e
+				flash.error = "Erro ao gerar carterinhas [${e}]"
 				redirect(controller: 'membro', action: 'listFilterBy', params:[filterBy: params.filterBy])
 			}
 		} else {
