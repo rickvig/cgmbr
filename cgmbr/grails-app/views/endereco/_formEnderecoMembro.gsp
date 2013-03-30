@@ -1,42 +1,18 @@
 <%@ page import="com.endereco.Endereco"%>
 
-<script>
-
-	function getCidadadePorEstado(){
-		var estadoId = jQuery('#estado').val()
-
-		if(estadoId){
-			$.ajax({
-				url: '${createLink([controller: 'cidade', action: 'getCidadePorEstado'])}'
-				,type: 'POST'
-				,data: { 'estadoId':estadoId }
-				,success : function(data){
-					//$('body').html(data);
-					//location.reload(true);
-				}
-				,error : function(data){
-	
-				}	 
-			});
-		} else{
-			alert("Selecione um estado.")
-		}
-		
-	}
-
-</script>
-
-
 <div class="fieldcontain ${hasErrors(bean: membroInstance?.endereco, field: 'pais', 'error')} required">
 	<label for="pais">
 		<g:message code="endereco.pais.label" default="Pais" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:set value="28" var="br"></g:set>
 	
-	<g:select id="pais" name="pais.id" from="${com.endereco.Pais.list()}" optionKey="id" required="" 
-	value="${membroInstance?.endereco?.pais?.id ? membroInstance?.endereco?.pais?.id : br}"
-		class="many-to-one" />
+	<g:select id="pais" name="pais.id" 
+			from="${com.endereco.Pais.list()}" 
+			optionKey="id" 
+			required="" 
+			value="${membroInstance?.endereco?.pais?.id ?: com.endereco.Pais.findByNome("Brasil").id}"
+			onchange="getEstadoPorPais();"	
+			class="many-to-one" />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: membroInstance?.endereco, field: 'estado', 'error')} required">
@@ -44,13 +20,12 @@
 		<g:message code="endereco.estado.label" default="Estado" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:set value="21" var="pr"></g:set>
 	<g:select id="estado" 
 			name="estado.id" 
 			from="${com.endereco.Estado.list()}" 
 			optionKey="id" 
 			required=""
-			value="${membroInstance?.endereco?.estado?.id ? membroInstance?.endereco?.estado?.id : pr}" 
+			value="${membroInstance?.endereco?.estado?.id ?: com.endereco.Estado.findByNome("Paraná").id}" 
 			onchange="getCidadadePorEstado();"
 			class="many-to-one" />
 </div>
@@ -60,13 +35,12 @@
 		<g:message code="endereco.cidade.label" default="Cidade" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:set value="4119" var="mga"></g:set>
 	<g:select id="cidade" 
 			name="cidade.id" 
 			from="${com.endereco.Cidade.list()}" 
 			optionKey="id" 
 			required=""
-			value="${membroInstance?.endereco?.cidade?.id ? membroInstance?.endereco?.cidade?.id : mga}" 
+			value="${membroInstance?.endereco?.cidade?.id ?: com.endereco.Cidade.findByNome("Maringá").id}" 
 			class="many-to-one" />
 </div>
 
@@ -109,4 +83,50 @@
 	</label>
 	<g:textField name="complemento" value="${membroInstance?.endereco?.complemento}" />
 </div>
+
+<script>
+
+	$(document).ready(function() {
+		getEstadoPorPais();
+		getCidadadePorEstado();
+	});
+
+	function getEstadoPorPais(){
+		var paisId = jQuery('#pais').val()
+		console.log(paisId)
+		if(paisId){
+			$.ajax({
+				url: '${createLink([controller: 'estado', action: 'getEstadoPorPais'])}'
+				,type: 'POST'
+				,data: { 'paisId':paisId }
+				,success : function(data){
+					$('#estado').html(data);
+					$('#cidade').html("");
+				}
+				,error : function(data){ }	 
+			});
+		} else{
+			alert("Selecione um Pais.")
+		}
+	}
+
+	function getCidadadePorEstado(){
+		var estadoId = jQuery('#estado').val()
+		console.log(estadoId)
+		if(estadoId){
+			$.ajax({
+				url: '${createLink([controller: 'cidade', action: 'getCidadePorEstado'])}'
+				,type: 'POST'
+				,data: { 'estadoId':estadoId }
+				,success : function(data){
+					$('#cidade').html(data);
+				}
+				,error : function(data){ }	 
+			});
+		} else{
+			alert("Selecione um estado.")
+		}
+	}
+
+</script>
 

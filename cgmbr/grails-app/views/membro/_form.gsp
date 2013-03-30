@@ -127,9 +127,9 @@
 <div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'dataDeBatismo', 'error')} ">
 	<label for="dataDeBatismo">
 		<g:message code="membro.dataDeBatismo.label" default="Data De Batismo/Consagração" />
-
+		<span class="required-indicator">*</span>
 	</label>
-	<g:datePicker name="dataDeBatismo" precision="day" value="${membroInstance?.dataDeBatismo}" default="none" noSelection="['': '']" years="${1900..year}" />
+	<g:datePicker name="dataDeBatismo" required="" precision="day" value="${membroInstance?.dataDeBatismo}" default="none" noSelection="['': '']" years="${1900..year}" />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: membroInstance, field: 'congregacao', 'error')} ">

@@ -2,9 +2,8 @@ package com.endereco
 
 class Estado {
 
-	static mapping = {
-		//table 'Estado'
-		//coisas joinTable: 'NOME_TABELA_JOIN'
+	static mapping = { 
+		sort sigla: "asc" // or "asc"
 	}
 	
 	static hasMany = [cidades: Cidade]

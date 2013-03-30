@@ -96,23 +96,6 @@ p {
 				${Membro.findAllByStatus(Membro.INATIVO).size()}
 			</p>
 		</div>
-		<!-- listagem dos controladores!!! ->
-			<table>
-				<tbody>
-					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-						<tr>
-							<td>
-								<g:link controller="${c.logicalPropertyName}">
-									${c.name}
-								</g:link>
-							</td>
-						</tr>
-					</g:each>
-				</tbody>
-			</table>
-		-->
-		</div>
-
 	</shiro:isLoggedIn>
 </body>
 </html>

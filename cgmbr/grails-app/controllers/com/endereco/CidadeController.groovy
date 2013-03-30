@@ -1,19 +1,20 @@
 package com.endereco
 
+import grails.converters.JSON
+
 class CidadeController {
 
 	def scaffold = Cidade
 
 	def getCidadePorEstado = {
-		println params.estadoId.class
-		Long estadoIdLomg = Long.parseLong(params.estadoId)
-		Estado estado = Estado.get(estadoIdLomg)
-		List<Cidade> cidadesList = Cidade.findAllByEstado(estado)
+		Long estadoIdLong = Long.parseLong(params.estadoId)
+		Estado estado = Estado.get(estadoIdLong)
+		List cidadesList = Cidade.findAllByEstado(estado)
 		
-		println "cidadesList: "+cidadesList
-		
+		def renderList = ""
 		cidadesList.each{
-			render "<options>${it}</options>"
+			renderList += "<option value=\"${it.id}\">${it.nome}</option>"
 		}
+		render renderList
 	}
 }
