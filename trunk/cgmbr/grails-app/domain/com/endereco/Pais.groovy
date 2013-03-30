@@ -5,6 +5,10 @@ class Pais {
 	static final BRA = "Brasil"
 	static final PTG = "Portugal"
 	
+	static mapping = {
+		sort nome: "asc" // or "asc"
+	}
+	
 	String nome
 	
 	static hasMany = [estados: Estado]

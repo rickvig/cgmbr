@@ -60,9 +60,6 @@ marca-agua {
 			</div>
 		</shiro:isLoggedIn>
 		<img src="${resource(dir: 'images', file: 'logo_batista.png')}" alt="Grails" />
-		<%--		<div class="marca-agua">--%>
-		<%--			<img src="${resource(dir: 'images', file: 'logo_batista.png')}" alt="Grails" />--%>
-		<%--		</div>--%>
 		<div class="textLogo">
 			<h1>SCGM - Sistema de Cadastro Geral de Membros</h1>
 		</div>
@@ -90,6 +87,7 @@ marca-agua {
 			<g:link controller="membro" action="list">Listagem de Membros</g:link>
 			<g:link controller="cargo" action="list">Cargos</g:link>
 			<g:link controller="congregacao" action="list">Congrega&ccedil;&otilde;es</g:link>
+			<g:link controller="controles" action="index">Cadastros</g:link>
 		</div>
 		<br />
 		<g:layoutBody />
