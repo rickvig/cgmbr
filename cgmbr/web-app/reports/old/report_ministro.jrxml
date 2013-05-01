@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_membro" language="groovy" columnCount="2" pageWidth="595" pageHeight="842" columnWidth="277" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
-	<property name="ireport.zoom" value="1.771561000000001"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_membro" language="groovy" columnCount="2" pageWidth="595" pageHeight="765" columnWidth="255" leftMargin="42" rightMargin="42" topMargin="42" bottomMargin="20">
+	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="89"/>
 	<parameter name="IDS" class="java.lang.String">
 		<defaultValueExpression><![CDATA["1, 2, 3, 4, 5, 6, 7, 8"]]></defaultValueExpression>
 	</parameter>
@@ -60,81 +60,151 @@ WHERE
 	<field name="carterinha_id" class="java.lang.Long"/>
 	<field name="carterinha_data_de_emissao" class="java.sql.Timestamp"/>
 	<detail>
-		<band height="196" splitType="Stretch">
+		<band height="175" splitType="Stretch">
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="57" y="151" width="134" height="12"/>
+				<reportElement key="textField" x="78" y="120" width="113" height="9"/>
 				<textElement>
-					<font size="9"/>
+					<font size="7"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{congregacao_nome}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="30" y="44" width="88" height="15"/>
+				<reportElement key="textField" x="57" y="59" width="88" height="9"/>
 				<textElement>
-					<font size="10"/>
+					<font size="7" isBold="true" isItalic="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{membro_id}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="34" y="166" width="60" height="12"/>
+				<reportElement key="textField" x="56" y="129" width="60" height="9"/>
 				<textElement>
-					<font size="9"/>
+					<font size="7"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{carterinha_data_de_validade})]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="30" y="61" width="171" height="12"/>
+				<reportElement key="textField" x="43" y="67" width="167" height="9"/>
 				<textElement>
-					<font size="9"/>
+					<font size="7"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{membro_nome}]]></textFieldExpression>
 			</textField>
 			<image scaleImage="RetainShape">
-				<reportElement key="image" x="201" y="57" width="69" height="67"/>
+				<reportElement key="image" x="191" y="66" width="53" height="67"/>
 				<imageExpression><![CDATA[$F{membro_foto}]]></imageExpression>
 			</image>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="7" y="91" width="85" height="12"/>
+				<reportElement key="textField" x="35" y="85" width="85" height="9"/>
 				<textElement>
-					<font size="9"/>
+					<font size="7"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{membro_cpf} == null ? "--" : $F{membro_cpf})]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="134" y="91" width="60" height="12"/>
-				<textElement>
-					<font size="9"/>
+				<reportElement key="textField" x="145" y="93" width="64" height="9"/>
+				<textElement verticalAlignment="Top">
+					<font size="7"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{carterinha_data_de_emissao})]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="24" y="120" width="60" height="12"/>
+				<reportElement key="textField" x="70" y="102" width="115" height="9"/>
 				<textElement>
-					<font size="9"/>
+					<font size="7"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{membro_estado_civil}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="7" y="76" width="89" height="12"/>
+				<reportElement key="textField" x="35" y="76" width="89" height="9"/>
 				<textElement>
-					<font size="9"/>
+					<font size="7"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{membro_rg} == null ? "--" : $F{membro_rg})]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="57" y="136" width="60" height="12"/>
-				<textElement>
-					<font size="9"/>
+				<reportElement key="textField" x="75" y="111" width="72" height="9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{membro_data_de_batismo} == null ? "--" : new SimpleDateFormat("dd/MM/yyyy").format($F{membro_data_de_batismo}))]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="24" y="106" width="88" height="12"/>
+				<reportElement key="textField" x="47" y="93" width="72" height="9"/>
 				<textElement>
-					<font size="9"/>
+					<font size="7"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{cargo_nome}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement x="17" y="59" width="39" height="9"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[MATÍCULA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="67" width="25" height="9"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[NOME:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="76" width="17" height="9"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[R.G:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="85" width="17" height="9"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[CPF:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="93" width="29" height="9"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[CARGO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="102" width="52" height="9"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[ESTADO CIVIL:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="111" width="59" height="9"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[CONSAGRAÇÃO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="120" width="60" height="9"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[CONGREGAÇÃO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="129" width="38" height="9"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[VALIDADE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="104" y="93" width="40" height="9"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[ADMISSÃO:]]></text>
+			</staticText>
 		</band>
 	</detail>
 </jasperReport>
