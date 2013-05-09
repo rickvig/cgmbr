@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_membro" language="groovy" columnCount="2" pageWidth="595" pageHeight="765" columnWidth="253" columnSpacing="5" leftMargin="42" rightMargin="42" topMargin="42" bottomMargin="20">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="90"/>
 	<parameter name="IDS" class="java.lang.String">
 		<defaultValueExpression><![CDATA["1, 2, 3, 4, 5, 6, 7, 8"]]></defaultValueExpression>
 	</parameter>
@@ -62,7 +62,7 @@ WHERE
 	<detail>
 		<band height="173" splitType="Stretch">
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="141" y="83" width="67" height="9"/>
+				<reportElement key="textField" x="138" y="83" width="67" height="9"/>
 				<textElement>
 					<font size="7"/>
 				</textElement>
@@ -76,7 +76,7 @@ WHERE
 				<textFieldExpression><![CDATA[$F{congregacao_nome}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="63" y="59" width="88" height="11"/>
+				<reportElement key="textField" x="63" y="58" width="88" height="11"/>
 				<textElement>
 					<font size="8" isBold="true"/>
 				</textElement>
@@ -108,7 +108,7 @@ WHERE
 				<textFieldExpression><![CDATA[($F{membro_cpf} == null ? "--" : $F{membro_cpf})]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="145" y="94" width="60" height="9"/>
+				<reportElement key="textField" x="138" y="94" width="60" height="9"/>
 				<textElement>
 					<font size="7"/>
 				</textElement>
@@ -178,18 +178,18 @@ WHERE
 				<text><![CDATA[VALIDADE:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="104" y="83" width="36" height="9"/>
+				<reportElement x="101" y="83" width="36" height="9"/>
 				<textElement>
 					<font size="7"/>
 				</textElement>
 				<text><![CDATA[BATISMO:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="101" y="94" width="43" height="9"/>
+				<reportElement x="101" y="94" width="36" height="9"/>
 				<textElement>
 					<font size="7"/>
 				</textElement>
-				<text><![CDATA[ADIMISSÃO:]]></text>
+				<text><![CDATA[EMISSÃO:]]></text>
 			</staticText>
 		</band>
 	</detail>
