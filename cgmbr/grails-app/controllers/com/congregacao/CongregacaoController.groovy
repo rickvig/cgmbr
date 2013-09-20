@@ -7,7 +7,6 @@ class CongregacaoController {
 	def enderecoService
 	
 	def save() {
-		params.each{ println "- params: "+it }
 		def congrecacaoInstance = new Congregacao(params)
 
 		try {

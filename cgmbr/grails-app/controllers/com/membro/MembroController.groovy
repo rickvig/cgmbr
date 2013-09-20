@@ -17,7 +17,7 @@ class MembroController {
 
 		try {
 			def membroList = membroService.membrosPorGrupoCargo(params.filterBy)
-			[membroInstanceList: membroList, membroInstanceTotal: membroList.size(), filterBy: params.filterBy]
+			[membroInstanceList: membroList, filterBy: params.filterBy]
 		} catch (Exception e) {
 			redirect(action: "list", params: params)
 		}

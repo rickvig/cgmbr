@@ -18,26 +18,32 @@
 		<div id="show-shiroRole" class="content scaffold-show" role="main">
 			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
+				<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list shiroRole">
-			
 				<g:if test="${shiroRoleInstance?.name}">
-				<li class="fieldcontain">
-					<span id="name-label" class="property-label"><g:message code="shiroRole.name.label" default="Name" /></span>
-					
+					<li class="fieldcontain">
+						<span id="name-label" class="property-label"><g:message code="shiroRole.name.label" default="Name" /></span>
 						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${shiroRoleInstance}" field="name"/></span>
-					
-				</li>
+					</li>
 				</g:if>
 			
 				<g:if test="${shiroRoleInstance?.permissions}">
-				<li class="fieldcontain">
-					<span id="permissions-label" class="property-label"><g:message code="shiroRole.permissions.label" default="Permissions" /></span>
-					
+					<li class="fieldcontain">
+						<span id="permissions-label" class="property-label"><g:message code="shiroRole.permissions.label" default="Permissions" /></span>
 						<span class="property-value" aria-labelledby="permissions-label"><g:fieldValue bean="${shiroRoleInstance}" field="permissions"/></span>
-					
-				</li>
+					</li>
+				</g:if>
+				
+				<g:if test="${shiroRoleInstance?.congregacoes}">
+					<li class="fieldcontain">
+						<span id="users-label" class="property-label"><g:message code="shiroRole.congregacoes.label" default="Congregaçoes" /></span>
+							<g:each in="${shiroRoleInstance.congregacoes}" var="c">
+								<span class="property-value" aria-labelledby="congregacoes-label">
+									<g:link controller="shiroUser" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link>
+								</span>
+							</g:each>
+					</li>
 				</g:if>
 			
 				<g:if test="${shiroRoleInstance?.users}">

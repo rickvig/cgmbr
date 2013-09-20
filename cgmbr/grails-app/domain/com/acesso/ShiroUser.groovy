@@ -1,12 +1,29 @@
 package com.acesso
 
-class ShiroUser {
-    String username
-    String passwordHash
-    
-    static hasMany = [ roles: ShiroRole, permissions: String ]
+import org.apache.shiro.crypto.hash.Sha256Hash
 
-    static constraints = {
-        username(nullable: false, blank: false)
-    }
+class ShiroUser {
+	String username
+	String passwordHash
+
+	static hasMany = [ roles: ShiroRole, permissions: String ]
+
+	static constraints = {
+		username(nullable: false, blank: false)
+	}
+
+	def afterInsert() {
+		println "| afterInsert: ${this.passwordHash}"
+		passwordHash = new Sha256Hash(this.passwordHash).toHex()
+	}
+	/*
+	def afterUpdate() {
+		println "| afterUpdate: ${this.passwordHash}"
+		passwordHash = new Sha256Hash(this.passwordHash).toHex()
+	}
+	*/
+	@Override
+	public String toString() {
+		username
+	}
 }

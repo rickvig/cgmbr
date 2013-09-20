@@ -23,8 +23,6 @@ class CarterinhaController {
 	
 	def emiteCartoes = {
 		
-		params.each { println "	| ${it}" }
-		
 		def parser = "imprime-"
 		def membrosIds = []
 		def membroList = []
@@ -45,12 +43,12 @@ class CarterinhaController {
 				def carterinhaDeMembro = carterinhaService.criaCartaoDeMembro(params.filterBy, membrosIds, request)
 				response.outputStream << carterinhaDeMembro
 			} catch (Exception e) {
-				println "Erro: ${e}"
+				//println "Erro: ${e}"
 				flash.error = "Erro ao gerar carterinhas [${e}]"
 				redirect(controller: 'membro', action: 'listFilterBy', params:[filterBy: params.filterBy])
 			}
 		} else {
-			println "membrosIds: ${membrosIds}"
+			//println "membrosIds: ${membrosIds}"
 			flash.error = message(code: "carterinha.noselectPrint.message", args: [params.filterBy])
 			redirect(controller: 'membro', action: 'listFilterBy', params:[filterBy: params.filterBy])
 		}
