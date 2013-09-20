@@ -25,7 +25,7 @@ class EnderecoService {
 		endereco.complemento = parametros.complemento
 		
 		if(!endereco.save()){
-			println "| ERROS: "+endereco.errors
+			//println "| ERROS: "+endereco.errors
 			throw new Exception("Erro ao salver endereco.")
 			return
 		}

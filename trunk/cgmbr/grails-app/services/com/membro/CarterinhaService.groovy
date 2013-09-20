@@ -14,7 +14,7 @@ class CarterinhaService {
 
 	def criaCartaoDeMembro(Membro membro, def request) {
 		if(!membro){
-			println "| ERRO : não existe membro para gerar carterinha."
+			//println "| ERRO : não existe membro para gerar carterinha."
 			throw new Exception("Erro ao criar cartao de membro. Membro: ${membro}.")
 		} else{
 
@@ -35,7 +35,7 @@ class CarterinhaService {
 			}
 
 			if(!carterinha.save(flush: true)){
-				println "| ERROS: "+carterinha.errors
+				//println "| ERROS: "+carterinha.errors
 				throw new Exception("Erro ao salvar carterinha, "+carterinha.errors)
 			}
 
@@ -55,14 +55,14 @@ class CarterinhaService {
 				reportPdf = jasperService.generateReport(reportDef)
 				reportMySql = new ByteArrayInputStream(reportPdf.toByteArray())
 			} catch (Exception e) {
-				println "| ERROS: ${e.printStackTrace()}"
+				//println "| ERROS: ${e.printStackTrace()}"
 				throw new Exception(e)
 			}
 
 			carterinha.tipoConteudo = JasperExportFormat.PDF_FORMAT
 			carterinha.tamanhoArquivo = reportPdf.size()
 
-			println "| LOG - reportPdf OK"
+			//println "| LOG - reportPdf OK"
 			return reportMySql
 		}
 	}
@@ -89,17 +89,17 @@ class CarterinhaService {
 			}
 	
 			if(!carterinha.save(flush: true)){
-				println "| ERROS: "+carterinha.errors
+				//println "| ERROS: "+carterinha.errors
 				throw new Exception("Erro ao salver carterinha, "+carterinha.errors)
 			}
 		}
 		
 		String membrosIdsString = membrosIds.toString().replaceAll("[\\[\\]]", "");
-		println "| LOG - membrosIdsString: "+membrosIdsString
+		//println "| LOG - membrosIdsString: "+membrosIdsString
 
 		def reportDef
 		if(filterBy == Cargo.MINISTRO){
-			println "carterinha de ministro"
+			//println "carterinha de ministro"
 			reportDef = new JasperReportDef(name:NOME_REPORT_MINISTRO, fileFormat:JasperExportFormat.PDF_FORMAT
 					, reportData: new ArrayList(), parameters: ["IDS" : membrosIdsString])
 		} else{
@@ -113,11 +113,11 @@ class CarterinhaService {
 			reportPdf = jasperService.generateReport(reportDef)
 			reportMySql = new ByteArrayInputStream(reportPdf.toByteArray())
 		} catch (Exception e) {
-			println "| ERROS: ${e}"
+			//println "| ERROS: ${e}"
 			throw e
 		}
 
-		println "reportPdf OK: "
+		//println "reportPdf OK: "
 		return reportMySql
 	}
 
@@ -127,9 +127,8 @@ class CarterinhaService {
 		def appReportDir = new File(path+"reports")
 
 		appReportDir.eachFileMatch(~/.*jrxml/){
-			println it
 			return it
 		}
-		println "appReportDir: "+appReportDir
+		//println "appReportDir: "+appReportDir
 	}
 }

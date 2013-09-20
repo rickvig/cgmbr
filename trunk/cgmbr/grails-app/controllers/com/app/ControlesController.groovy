@@ -6,7 +6,7 @@ class ControlesController {
 	
 	def index = {
 		
-		List controlesIndisponiveis = ["auth", "shiroRole", "shiroUser", "controles", "congregacao", "cargo", "carterinha", "endereco", "membro", "jasper"] 
+		List controlesIndisponiveis = ["auth", "controles", "congregacao", "cargo", "carterinha", "endereco", "membro", "jasper"] 
 		
 		def controles = grailsApplication.controllerClasses.sort { it.fullName }
 		

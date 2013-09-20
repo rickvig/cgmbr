@@ -20,6 +20,7 @@ class ShiroRoleController {
     }
 
     def save() {
+		//println " | params ${params}"
         def shiroRoleInstance = new ShiroRole(params)
         if (!shiroRoleInstance.save(flush: true)) {
             render(view: "create", model: [shiroRoleInstance: shiroRoleInstance])

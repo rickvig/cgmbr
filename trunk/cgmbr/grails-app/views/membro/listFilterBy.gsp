@@ -105,9 +105,6 @@
 					value="${message(code: 'default.button.report.label', default: 'Imprimir Carterinhas')}"
 					target="blank" />
 			</fieldset>
-			<div class="pagination">
-				<g:paginate total="${membroInstanceTotal}" />
-			</div>
 		</div>
 	</g:form>
 </body>
