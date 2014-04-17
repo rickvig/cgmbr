@@ -27,7 +27,7 @@ class CarterinhaController {
 		def membrosIds = []
 		def membroList = []
 		try {
-			membroList = membroService.membrosPorGrupoCargo(params.filterBy)
+			membroList = membroService.membrosPorGrupoCargoPaginate(params.filterBy)
 		} catch (Exception e) {
 			flash.error = "Erro ao consultar ${params.filterBy} [${e}]"
 		} 

@@ -13,15 +13,22 @@ class MembroController {
 
 	def listFilterBy() {
 
-		params.max = Math.min(params.max ? params.int('max') : 10, 100)
+		params.max = Math.min(params.max ? params.int('max') : 8, 100)
+		params.offset = params.offset ? Integer.parseInt(params.offset) : 0
 
 		try {
-			def membroList = membroService.membrosPorGrupoCargo(params.filterBy)
-			[membroInstanceList: membroList, filterBy: params.filterBy]
+			def membroList = membroService.membrosPorGrupoCargoPaginate(params.filterBy, params.max, params.offset)
+			def membroTotal = membroService.membrosPorGrupoCargoTotal(params.filterBy)
+			
+			[membroInstanceList: membroList, membroInstanceTotal: membroTotal, filterBy: params.filterBy]
 		} catch (Exception e) {
+			println e
+		// TODO colocar esse código no scaffold
+			flash.message = "membro.text.list.error.message"
+			flash.args = [Membro.class.name, e]
+			flash.default = "Não foi possível carregar lista de Membros."
 			redirect(action: "list", params: params)
 		}
-
 	}
 
 	def save() {

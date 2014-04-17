@@ -16,12 +16,7 @@ class ShiroUser {
 		println "| afterInsert: ${this.passwordHash}"
 		passwordHash = new Sha256Hash(this.passwordHash).toHex()
 	}
-	/*
-	def afterUpdate() {
-		println "| afterUpdate: ${this.passwordHash}"
-		passwordHash = new Sha256Hash(this.passwordHash).toHex()
-	}
-	*/
+	
 	@Override
 	public String toString() {
 		username
