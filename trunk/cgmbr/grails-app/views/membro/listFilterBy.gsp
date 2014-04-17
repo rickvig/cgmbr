@@ -26,20 +26,25 @@
 </head>
 <body>
 	<g:form method="post" controller="carterinha">
-		<a href="#list-membro" class="skip" tabindex="-1"><g:message
-				code="default.link.skip.label" default="Skip to content&hellip;" /></a>
+		<a href="#list-membro" class="skip" tabindex="-1">
+		<g:message code="default.link.skip.label" default="Skip to content&hellip;" /></a>
 		<div class="nav" role="navigation">
 			<ul>
-				<li><g:link class="list" action="listFilterBy"
-						params="${[filterBy: Cargo.MEMBRO]}">
-						<g:message code="default.list.membro.label" args="[entityName]"
-							default="Membros" />
-					</g:link></li>
-				<li><g:link class="list" action="listFilterBy"
-						params="${[filterBy: Cargo.MINISTRO]}">
-						<g:message code="default.list.ministro.label" args="[entityName]"
-							default="Ministros" />
-					</g:link></li>
+				<li>
+					<g:link class="list" action="listFilterBy" params="${[filterBy: Cargo.MEMBRO]}">
+						<g:message code="default.list.membro.label" args="[entityName]" default="Membros" />
+					</g:link>
+				</li>
+				<li>
+					<g:link class="list" action="listFilterBy" params="${[filterBy: Cargo.MINISTRO]}">
+						<g:message code="default.list.ministro.label" args="[entityName]" default="Ministros" />
+					</g:link>
+				</li>
+				<li>
+					<g:actionSubmit class="report" action="emiteCartoes"
+					value="${message(code: 'default.button.report.label', default: 'Imprimir Carterinhas')}"
+					target="blank" />
+				</li>
 			</ul>
 		</div>
 		<div id="list-membro" class="content scaffold-list" role="main">
@@ -70,7 +75,6 @@
 						<th> ${message(code: 'membro.status.label', default: 'Status')} </th>
 
 						<th class="align-center">
-							Imprimir Carterinha 
 							<span>
 								<input id="checkAll" type="checkbox" />
 							</span>
@@ -88,11 +92,12 @@
 									${fieldValue(bean: membroInstance, field: "nome")}
 								</g:link></td>
 
-							<td><g:link controller="cargo" action="show"
+							<td>
+								<g:link controller="cargo" action="show"
 									id="${membroInstance.cargo.id}">
 									${fieldValue(bean: membroInstance, field: "cargo")}
-								</g:link></td>
-
+								</g:link>
+							</td>
 							<td>
 								${fieldValue(bean: membroInstance, field: "congregacao")}
 							</td>
@@ -101,7 +106,9 @@
 								${fieldValue(bean: membroInstance, field: "status")}
 							</td>
 
-							<td class="align-center" ><g:checkBox class="cb" name="imprime-${membroInstance.id}" checked="false" /></td>
+							<td class="align-center" >
+								<input type="checkbox" class="cb" name="membrosId" value="${membroInstance.id}" />
+							</td>
 						</tr>
 					</g:each>
 				</tbody>

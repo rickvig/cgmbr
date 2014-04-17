@@ -22,33 +22,20 @@ class CarterinhaController {
 	}
 	
 	def emiteCartoes = {
+		List membrosId = params.membrosId ?: []
 		
-		def parser = "imprime-"
-		def membrosIds = []
-		def membroList = []
-		try {
-			membroList = membroService.membrosPorGrupoCargoPaginate(params.filterBy)
-		} catch (Exception e) {
-			flash.error = "Erro ao consultar ${params.filterBy} [${e}]"
-		} 
-		
-		membroList.each{
-			def key = parser+""+it.id
-			if((params.containsKey(key)) && (params.get(key) == "on")) {
-				membrosIds.add(it.id) 
-			}
-		}
-		if(!membrosIds.isEmpty()){
+		if (!membrosId.isEmpty()) {
+			def ids = []
+			membrosId.each { ids.add(Long.parseLong(it)) }
 			try {
-				def carterinhaDeMembro = carterinhaService.criaCartaoDeMembro(params.filterBy, membrosIds, request)
+				def carterinhaDeMembro = carterinhaService.criaCartaoDeMembro(params.filterBy, ids, request)
 				response.outputStream << carterinhaDeMembro
+				
 			} catch (Exception e) {
-				//println "Erro: ${e}"
 				flash.error = "Erro ao gerar carterinhas [${e}]"
 				redirect(controller: 'membro', action: 'listFilterBy', params:[filterBy: params.filterBy])
 			}
 		} else {
-			//println "membrosIds: ${membrosIds}"
 			flash.error = message(code: "carterinha.noselectPrint.message", args: [params.filterBy])
 			redirect(controller: 'membro', action: 'listFilterBy', params:[filterBy: params.filterBy])
 		}
