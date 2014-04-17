@@ -15,6 +15,14 @@
 	}
 </style>
 
+<g:javascript library="jquery" plugin="jquery" />
+
+<script type="text/javascript">
+	$("#checkAll").change(function() {
+		$('.cb').attr("checked", $(this).is(':checked'));
+	})
+</script>
+
 </head>
 <body>
 	<g:form method="post" controller="carterinha">
@@ -51,22 +59,22 @@
 			<table>
 				<thead>
 					<tr>
-						<g:sortableColumn property="id"
-							title="${message(code: 'membro.id.label', default: 'N°')}" />
+						<th> ${message(code: 'membro.id.label', default: 'N°')} </th>
 
-						<g:sortableColumn property="nome"
-							title="${message(code: 'membro.nome.label', default: 'Nome')}" />
+						<th> ${message(code: 'membro.nome.label', default: 'Nome')} </th>
 
-						<g:sortableColumn property="cargo"
-							title="${message(code: 'membro.cargo.label', default: 'Cargo')}" />
+						<th> ${message(code: 'membro.cargo.label', default: 'Cargo')} </th>
 
-						<g:sortableColumn property="congregacao"
-							title="${message(code: 'membro.congregacao.label', default: 'Congregação')}" />
+						<th> ${message(code: 'membro.congregacao.label', default: 'Congregação')} </th>
 
-						<g:sortableColumn property="status" width="50"
-							title="${message(code: 'membro.status.label', default: 'Status')}" />
+						<th> ${message(code: 'membro.status.label', default: 'Status')} </th>
 
-						<th class="align-center">Imprimir Carterinha</th>
+						<th class="align-center">
+							Imprimir Carterinha 
+							<span>
+								<input id="checkAll" type="checkbox" />
+							</span>
+						</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -93,12 +101,14 @@
 								${fieldValue(bean: membroInstance, field: "status")}
 							</td>
 
-							<td class="align-center" ><g:checkBox
-									name="imprime-${membroInstance.id}" checked="false" /></td>
+							<td class="align-center" ><g:checkBox class="cb" name="imprime-${membroInstance.id}" checked="false" /></td>
 						</tr>
 					</g:each>
 				</tbody>
 			</table>
+			<div class="pagination">
+				<g:paginate total="${membroInstanceTotal}" action="listFilterBy" params="${[filterBy: filterBy]}"/>
+			</div>
 			<fieldset class="buttons">
 				<input type="hidden" name="filterBy" value="${filterBy}">
 				<g:actionSubmit class="report" action="emiteCartoes"
