@@ -22,7 +22,12 @@ class CarterinhaController {
 	}
 	
 	def emiteCartoes = {
-		List membrosId = params.membrosId ?: []
+		List membrosId = []
+		if (params.membrosId.class == String) {
+			membrosId.add(params.membrosId)
+		} else {
+			membrosId = params.membrosId
+		}
 		
 		if (!membrosId.isEmpty()) {
 			def ids = []
