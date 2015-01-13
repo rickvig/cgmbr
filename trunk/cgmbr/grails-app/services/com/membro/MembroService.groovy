@@ -40,7 +40,6 @@ class MembroService {
 			resultQuery.each{ ids.add(it.ID) }
 			
 			membros = Membro.findAll("from Membro where id in (:ids)", [ids: ids])
-			println " | MEMBROS: $membros"
 		} catch (Exception e) {
 			e.printStackTrace()
 			throw e

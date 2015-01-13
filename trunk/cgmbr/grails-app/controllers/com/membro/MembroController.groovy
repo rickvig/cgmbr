@@ -22,7 +22,7 @@ class MembroController {
 			
 			[membroInstanceList: membroList, membroInstanceTotal: membroTotal, filterBy: params.filterBy]
 		} catch (Exception e) {
-			println e
+			//println e
 		// TODO colocar esse código no scaffold
 			flash.message = "membro.text.list.error.message"
 			flash.args = [Membro.class.name, e]
