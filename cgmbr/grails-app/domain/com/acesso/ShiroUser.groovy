@@ -13,7 +13,6 @@ class ShiroUser {
 	}
 
 	def afterInsert() {
-		println "| afterInsert: ${this.passwordHash}"
 		passwordHash = new Sha256Hash(this.passwordHash).toHex()
 	}
 	
